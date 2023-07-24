@@ -1,17 +1,17 @@
-﻿using System;
+﻿using ET;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using ET;
-using System.Data;
 
 namespace DAL
 {
-    public class RAM_DAL : Conexion
+    public class FuentePoderDAL : Conexion
     {
-        public bool IngresarRAM(RAM ram)
+        public bool IngresarFuentePoder(FuentePoder fuentePoder)
         {
             bool retVal = false;
             using (var cn = GetConnection())
@@ -19,14 +19,16 @@ namespace DAL
                 try
                 {
                     cn.Open();
-                    using (var cmd = new SqlCommand("SpIngresarRAM", cn))
+                    using (var cmd = new SqlCommand("SpIngresarFuente", cn))
                     {
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@descrip", ram.Descripcion));
-                        cmd.Parameters.Add(new SqlParameter("@versDDR", ram.VersionDDR));
-                        cmd.Parameters.Add(new SqlParameter("@capacidad", ram.Capacidad));
-                        cmd.Parameters.Add(new SqlParameter("@consumo", ram.ConsumoEnergia));
+                        cmd.Parameters.Add(new SqlParameter("@descrip", fuentePoder.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadSATA", fuentePoder.CantidadConectoresSATA));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadPCIE", fuentePoder.CantidadConectoresPCIe));
+                        cmd.Parameters.Add(new SqlParameter("@potencia", fuentePoder.Potencia));
+                        cmd.Parameters.Add(new SqlParameter("@alto", fuentePoder.Altura));
+                        cmd.Parameters.Add(new SqlParameter("@ancho", fuentePoder.Ancho));
                         SqlDataReader reader = cmd.ExecuteReader();
                         reader.Close();
                         retVal = true;
@@ -40,7 +42,7 @@ namespace DAL
             }
             return retVal;
         }
-        public bool ActualizarRAM(RAM ram)
+        public bool ActualizarFuentePoder(FuentePoder fuentePoder)
         {
             bool retVal = false;
             using (var cn = GetConnection())
@@ -48,15 +50,17 @@ namespace DAL
                 try
                 {
                     cn.Open();
-                    using (var cmd = new SqlCommand("SpActualizarRAM", cn))
+                    using (var cmd = new SqlCommand("SpActualizarFuente", cn))
                     {
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@id", ram.Id));
-                        cmd.Parameters.Add(new SqlParameter("@descrip", ram.Descripcion));
-                        cmd.Parameters.Add(new SqlParameter("@versDDR", ram.VersionDDR));
-                        cmd.Parameters.Add(new SqlParameter("@capacidad", ram.Capacidad));
-                        cmd.Parameters.Add(new SqlParameter("@consumo", ram.ConsumoEnergia));
+                        cmd.Parameters.Add(new SqlParameter("@id", fuentePoder.Id));
+                        cmd.Parameters.Add(new SqlParameter("@descrip", fuentePoder.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadSATA", fuentePoder.CantidadConectoresSATA));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadPCIE", fuentePoder.CantidadConectoresPCIe));
+                        cmd.Parameters.Add(new SqlParameter("@potencia", fuentePoder.Potencia));
+                        cmd.Parameters.Add(new SqlParameter("@alto", fuentePoder.Altura));
+                        cmd.Parameters.Add(new SqlParameter("@ancho", fuentePoder.Ancho));
                         SqlDataReader reader = cmd.ExecuteReader();
                         reader.Close();
                         retVal = true;
@@ -70,7 +74,7 @@ namespace DAL
             }
             return retVal;
         }
-        public DataTable BuscarRAM()
+        public DataTable BuscarFuentePoder()
         {
             DataTable retVal = new DataTable();
             using (var cn = GetConnection())
@@ -78,7 +82,7 @@ namespace DAL
                 try
                 {
                     cn.Open();
-                    using (var cmd = new SqlCommand("SpBuscarRam", cn))
+                    using (var cmd = new SqlCommand("SpBuscarFuente", cn))
                     {
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -94,7 +98,7 @@ namespace DAL
             }
             return retVal;
         }
-        public bool EliminarRAM(int id)
+        public bool EliminarFuentePoder(int id)
         {
             bool retVal = false;
             using (var cn = GetConnection())
@@ -102,7 +106,7 @@ namespace DAL
                 try
                 {
                     cn.Open();
-                    using (var cmd = new SqlCommand("SpEliminarRAM", cn))
+                    using (var cmd = new SqlCommand("SpEliminarFuente", cn))
                     {
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
