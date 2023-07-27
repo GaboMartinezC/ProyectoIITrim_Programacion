@@ -16,12 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\WEB
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Estudiante-06/Source/Repos/ProyectoIITrim_Programacion/WEB/Views/Almacenamiento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxtYWNlbmFtaWVudG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Estudiante-06/Source/Repos/ProyectoIITrim_Programacion/WEB/Views/FuentePoder/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVlbnRlUG9kZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Estudiante-06/Source/Repos/ProyectoIITrim_Programacion/WEB/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Estudiante-06/Source/Repos/ProyectoIITrim_Programacion/WEB/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Estudiante-06/Source/Repos/ProyectoIITrim_Programacion/WEB/Views/RAM/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUkFNXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Estudiante-06/Source/Repos/ProyectoIITrim_Programacion/WEB/Views/Shared/Error.cshtml]

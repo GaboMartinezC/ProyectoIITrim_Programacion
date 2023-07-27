@@ -10,3 +10,15 @@ C:\Users\marti\Documents\Cotidiano\ProyectoIITrim_GabrielMartinezCamareno11E\ET\
 C:\Users\marti\Documents\Cotidiano\ProyectoIITrim_GabrielMartinezCamareno11E\ET\obj\Debug\net6.0\refint\ET.dll
 C:\Users\marti\Documents\Cotidiano\ProyectoIITrim_GabrielMartinezCamareno11E\ET\obj\Debug\net6.0\ET.pdb
 C:\Users\marti\Documents\Cotidiano\ProyectoIITrim_GabrielMartinezCamareno11E\ET\obj\Debug\net6.0\ref\ET.dll
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\bin\Debug\net6.0\ET.deps.json
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\bin\Debug\net6.0\ET.dll
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\bin\Debug\net6.0\ET.pdb
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\obj\Debug\net6.0\ET.csproj.AssemblyReference.cache
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\obj\Debug\net6.0\ET.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\obj\Debug\net6.0\ET.AssemblyInfoInputs.cache
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\obj\Debug\net6.0\ET.AssemblyInfo.cs
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\obj\Debug\net6.0\ET.csproj.CoreCompileInputs.cache
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\obj\Debug\net6.0\ET.dll
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\obj\Debug\net6.0\refint\ET.dll
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\obj\Debug\net6.0\ET.pdb
+C:\Users\Estudiante-06\Source\Repos\ProyectoIITrim_Programacion\ET\obj\Debug\net6.0\ref\ET.dll
