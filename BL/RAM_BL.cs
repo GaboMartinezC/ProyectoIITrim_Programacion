@@ -38,9 +38,9 @@ namespace BL
                 RAM_DTO ram = new RAM_DTO();
                 ram.Id = Convert.ToInt32(listaRAM.Rows[i]["ID"]);
                 ram.Descripcion = listaRAM.Rows[i]["DESCRIPCION"].ToString();
-                ram.VersionDDR = Convert.ToInt32(listaRAM.Rows[i]["VERSION_DDR"]);
-                ram.Capacidad = Convert.ToInt32(listaRAM.Rows[i]["CAPACIDAD"]);
-                ram.ConsumoEnergia = Convert.ToDouble(listaRAM.Rows[i]["CAPACIDAD"]);
+                ram.VersionDDR =listaRAM.Rows[i]["VERSION_DDR"].ToString();
+                ram.Capacidad = listaRAM.Rows[i]["CAPACIDAD"].ToString();
+                ram.ConsumoEnergia = listaRAM.Rows[i]["CAPACIDAD"].ToString();
                 retVal.Add(ram);
             }
             return retVal;

@@ -2,12 +2,27 @@
 @section Scripts
 {
     <script type="text/javascript">
-        const LlamarModalAgregar = () => {
-            document.getElementById("modalAgregar").style.display = "block";
+        let idGlobal;
+        const LlamarVistaAgregar = () => {
+            window.location.replace("/Ram/Create");
         }
         const CerrarModales = () => {
-            document.getElementById("modalAgregar").style.display = "none";
+            document.getElementById("modalConfirmarBorrado").style.display = "none";
             //document.getElementById("modalModificar").style.display = "none";
+        }
+        const Modificar = (id) => {
+
+        }
+        const Eliminar = (id, confirmado) => {
+            if (id!=0)
+                idGlobal = id;
+            if (!confirmado)
+                document.getElementById("modalConfirmarBorrado").style.display = "block";
+            else
+            {
+                CerrarModales();
+                window.location.replace("/Ram/Delete"+idGlobal);
+            }
         }
         function Guardar ()
         {
@@ -21,7 +36,6 @@
         }
     </script>
 }
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 offset-md-4 col-sm-12 p-3">
@@ -61,9 +75,10 @@
                                 <td>@ram.Capacidad</td>
                                 <td>@ram.ConsumoEnergia</td>
                                 <td>
-                                    
+                                    <button class="btn btn-warning" onclick="Modificar(@ram.Id);"></button>
                                 </td>
                                 <td>
+                                    <button class="btn btn-danger" onclick="Eliminar(@ram.Id, false);"></button>
                                 </td>
                             </tr>
                         }
@@ -73,7 +88,7 @@
         </div>
         <div class="col-md-2 col-sm-12"></div>
         <div class="col-md-4 offset-md-4 p-2 col-sm-12 text-center">
-            <button class="btn btn-outline-dark" onclick="LlamarModalAgregar();">
+            <button class="btn btn-outline-dark" onclick="LlamarVistaAgregar();">
                 <span>Añadir &plus;</span>
             </button>
         </div>
@@ -81,63 +96,28 @@
         <div class="col-md-2 col-sm-12"></div>
     </div>
 </div>
-<!--Modales de CU-->
-<div id="modalAgregar" class="miModal">
-    <div class="contenidoModal">
-        <button class="btn" onclick="CerrarModales();">
-            <span style="color: black;">&times;</span>
-        </button>
-        <!--Contenido del modal-->
-        <div class="row">
+<!--Modal de Borrado-->
+    <div id="modalConfirmarBorrado" class="miModal">
+        <div class="contenidoModal">
+            <button class="btn" onclick="CerrarModales();">
+                <span style="color: black;">&times;</span>
+            </button>
+            <!--Contenido del modal-->
+            <div class="row">
             <div class="col-md-4 offset-md-4 col-sm-12">
-                <h1 class="subtitle">Guardar</h1>
+                <p>¿Seguro de eliminar este elemento del Catálogo?</p>
             </div>
             <div class="col-md-8"></div>
-            <div class="col-md-8 offset-md-2 col-sm-12">
-                <form action="" class="form-control">
-                    <!--Organizacion de los inputs con columnas nested-->
-                    <div class="row">
-                        <div class="col-md-12 p-3">
-                            <input id="txtDescripcion" class="form-control" type="text" placeholder="Descripcion">
-                        </div>
-                        <div class="col-md-12 p-3">
-                            <input id="txtConsumo" class="form-control" type="text" placeholder="Consumo (W)">
-                        </div>
-                        <div class="col-md-4 offset-md-2 col-sm-12 p-2">
-                            <label for="">DDR</label>
-                            <select id="txtDDR" class="form-control">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4 col-sm-12 p-2">
-                            <label for="">Capacidad</label>
-                            <select class="form-control" id="txtCapacidad">
-                                <option value="">2</option>
-                                <option value="">4</option>
-                                <option value="">6</option>
-                                <option value="">8</option>
-                                <option value="">12</option>
-                                <option value="">16</option>
-                                <option value="">32</option>
-                                <option value="">64</option>
-                                <option value="">128</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4 offset-md-4 col-sm-12 p-2">
-                            <button class="btn btn-outline-dark" onclick="Guardar();">
-                                <span>Guardar &plus;</span>
-                            </button>
-                        </div>
-
-                    </div>
-                </form>
+            <div class="col-md-4 offset-md-2 col-sm-12 p-2 text-center">
+                <button class="btn btn-outline-danger" onclick="Eliminar(0,true);">
+                    <span>Sí</span>
+                </button>
             </div>
-            <div class="col-md-2"></div>
-            <div></div>
+            <div class="col-md-4 col-sm-12 p-2 text-center">
+                <button class="btn btn-outline-primary" onclick="CerrarModales();">
+                    <span>No</span>
+                </button>
+            </div>
+            </div>
         </div>
     </div>
-</div>

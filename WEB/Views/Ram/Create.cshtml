@@ -1,0 +1,60 @@
+﻿@model ET.DTO.RAM_DTO
+@using (Html.BeginForm("Create", "Ram", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-4 offset-md-4 col-sm-12 text-center">
+            <h1 class="subtitle">Ingresar RAM</h1>
+        </div>
+        <div class="col-md-8"></div>
+        <div class="col-md-8 offset-md-2 col-sm-12">
+            <form asp-action="Create" class="form-control" asp-controller="Ram" method="post">
+                <!--Organizacion de los inputs con columnas nested-->
+                <div class="row">
+                    <div class="col-md-12 p-3">
+                        <input asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion" value="" required="">
+                        <div class="invalid-feedback">
+                            Descripción es requerida
+                        </div>
+                    </div>
+                    <div class="col-md-12 p-3">
+                        <input asp-for="ConsumoEnergia" class="form-control" type="text" placeholder="Consumo (W)" value="" required="">
+                        <div class="invalid-feedback">
+                            Consumo es requerido
+                        </div>
+                    </div>
+                    <div class="col-md-4 offset-md-2 col-sm-12 p-2">
+                        <label for="">DDR</label>
+                        <select asp-for="VersionDDR" id="txtDDR" class="form-control">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-2">
+                        <label for="">Capacidad</label>
+                        <select asp-for="Capacidad" class="form-control" id="txtCapacidad">
+                            <option value="">2</option>
+                            <option value="">4</option>
+                            <option value="">6</option>
+                            <option value="">8</option>
+                            <option value="">12</option>
+                            <option value="">16</option>
+                            <option value="">32</option>
+                            <option value="">64</option>
+                            <option value="">128</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <span>Guardar &plus;</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+        <div></div>
+    </div>
+}

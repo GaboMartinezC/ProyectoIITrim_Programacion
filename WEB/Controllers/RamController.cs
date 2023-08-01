@@ -15,26 +15,34 @@ namespace WEB.Controllers
             return View(listadoRam);
         }
         /// <summary>
+        /// GET: ProductController/Create
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Create()
+        {
+            return View();
+        }
+        /// <summary>
         /// POST: ProductController/Create
         /// </summary>
-        /// <param name="descrip"></param>
-        /// <param name="ddr"></param>
-        /// <param name="capacidad"></param>
-        /// <param name="cons"></param>
+        /// <param name="ram"></param>
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(string descrip, int ddr, int capacidad, int cons)
+        public ActionResult Create(RAM_DTO ram)
         {
             try
             {
-                RAM ram = new RAM();
-                ram.Descripcion = descrip;
-                ram.VersionDDR = ddr;
-                ram.Capacidad = capacidad;
-                ram.ConsumoEnergia = cons;
-                bl.IngresarRam(ram);
-                return RedirectToAction(nameof(Index));
+                RAM ramEstatica = new();
+                ramEstatica.Descripcion = ram.Descripcion;
+                ramEstatica.VersionDDR = Convert.ToInt32(ram.VersionDDR);
+                ramEstatica.ConsumoEnergia = Convert.ToDouble(ram.ConsumoEnergia);
+                ramEstatica.Capacidad = Convert.ToInt32(ram.Capacidad);
+                bool resp = bl.IngresarRam(ramEstatica);
+                if (resp)
+                    return RedirectToAction("Index");
+                else
+                    return View();
             }
             catch(Exception ex)
             {

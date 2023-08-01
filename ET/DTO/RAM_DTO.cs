@@ -10,8 +10,8 @@ namespace ET.DTO
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
-        public int VersionDDR { get; set; }
-        public int Capacidad { get; set; }
-        public double ConsumoEnergia { get; set; }
+        public string VersionDDR { get; set; }
+        public string Capacidad { get; set; }
+        public string ConsumoEnergia { get; set; }
     }
 }
