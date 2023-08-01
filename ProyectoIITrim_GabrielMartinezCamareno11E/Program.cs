@@ -20,10 +20,8 @@ namespace ProyectoIITrim_GabrielMartinezCamareno11E
             //ApplicationConfiguration.Initialize();
             //Application.Run(new Form1());
             RAM_BL bl = new RAM_BL();
-            DataTable dt = bl.BuscarRam();
-            MessageBox.Show(dt.Rows.Count.ToString());
-            var lista = Tools.ConvertDataTable<RAM_DTO>(dt);
-            foreach(var ram in lista)
+            var dt = bl.BuscarRam();
+            foreach(var ram in dt)
             {
                 MessageBox.Show(ram.Id+" "+ram.Descripcion);
             }

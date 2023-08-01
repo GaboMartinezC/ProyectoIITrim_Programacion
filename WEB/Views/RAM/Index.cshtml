@@ -2,13 +2,6 @@
 @section Scripts
 {
     <script type="text/javascript">
-        let ram = {
-            id: 0,
-            descripcion: "",
-            DDR: 0,
-            capacidad: 0,
-            consumo: 0
-        };
         const LlamarModalAgregar = () => {
             document.getElementById("modalAgregar").style.display = "block";
         }
@@ -16,14 +9,15 @@
             document.getElementById("modalAgregar").style.display = "none";
             //document.getElementById("modalModificar").style.display = "none";
         }
-        const Guardar = () => {
-            ram.id = 1
+        function Guardar ()
+        {
             ram.descripcion = document.getElementById("txtDescripcion").value;
             ram.consumo = document.getElementById("txtConsumo").value;
             let comboDDR = document.getElementById("txtDDR");
             ram.DDR = comboDDR.options[comboDDR.selectedIndex].text;
             let comboCapacidad = document.getElementById("txtCapacidad");
             ram.capacidad = comboCapacidad.options[comboCapacidad.selectedIndex].text;
+
         }
     </script>
 }
