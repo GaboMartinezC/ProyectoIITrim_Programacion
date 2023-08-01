@@ -1,5 +1,9 @@
 using BL;
+using ET;
+using ET.DTO;
+using WEB.Utilities;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ProyectoIITrim_GabrielMartinezCamareno11E
 {
@@ -18,6 +22,11 @@ namespace ProyectoIITrim_GabrielMartinezCamareno11E
             RAM_BL bl = new RAM_BL();
             DataTable dt = bl.BuscarRam();
             MessageBox.Show(dt.Rows.Count.ToString());
+            var lista = Tools.ConvertDataTable<RAM_DTO>(dt);
+            foreach(var ram in lista)
+            {
+                MessageBox.Show(ram.Id+" "+ram.Descripcion);
+            }
         }
     }
 }
