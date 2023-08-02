@@ -20,11 +20,11 @@ namespace ProyectoIITrim_GabrielMartinezCamareno11E
             //ApplicationConfiguration.Initialize();
             //Application.Run(new Form1());
             RAM_BL bl = new RAM_BL();
-            var dt = bl.BuscarRam();
-            foreach(var ram in dt)
-            {
-                MessageBox.Show(ram.Id+" "+ram.Descripcion);
-            }
+            var dt = bl.EliminarRam(2);
+            if (dt)
+                MessageBox.Show("1");
+            else
+                MessageBox.Show("2");
         }
     }
 }

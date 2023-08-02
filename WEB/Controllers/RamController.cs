@@ -50,5 +50,29 @@ namespace WEB.Controllers
             }
 
         }
+        public ActionResult Delete()
+        {
+            return View();
+        }
+        /// <summary>
+        /// POST: ProductController/Delete/5
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                if (bl.EliminarRam(id))
+                    return RedirectToAction("Index");
+                else
+                    return View();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

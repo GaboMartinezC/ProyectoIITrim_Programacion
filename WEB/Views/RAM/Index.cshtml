@@ -8,10 +8,6 @@
         }
         const CerrarModales = () => {
             document.getElementById("modalConfirmarBorrado").style.display = "none";
-            //document.getElementById("modalModificar").style.display = "none";
-        }
-        const Modificar = (id) => {
-
         }
         const Eliminar = (id, confirmado) => {
             if (id!=0)
@@ -20,19 +16,20 @@
                 document.getElementById("modalConfirmarBorrado").style.display = "block";
             else
             {
+                id = idGlobal;
                 CerrarModales();
-                window.location.replace("/Ram/Delete"+idGlobal);
+                $.ajax({
+                    url: "/Ram/Delete", // URL del controlador y acción
+                    type: "POST",
+                    data: { id: id }, 
+                    success: function (respuesta) {
+                        window.location.reload();
+                    },
+                    error: function () {
+                        alert("Error al eliminar el elemento");
+                    }
+                });
             }
-        }
-        function Guardar ()
-        {
-            ram.descripcion = document.getElementById("txtDescripcion").value;
-            ram.consumo = document.getElementById("txtConsumo").value;
-            let comboDDR = document.getElementById("txtDDR");
-            ram.DDR = comboDDR.options[comboDDR.selectedIndex].text;
-            let comboCapacidad = document.getElementById("txtCapacidad");
-            ram.capacidad = comboCapacidad.options[comboCapacidad.selectedIndex].text;
-
         }
     </script>
 }
@@ -97,27 +94,27 @@
     </div>
 </div>
 <!--Modal de Borrado-->
-    <div id="modalConfirmarBorrado" class="miModal">
-        <div class="contenidoModal">
-            <button class="btn" onclick="CerrarModales();">
-                <span style="color: black;">&times;</span>
+<div id="modalConfirmarBorrado" class="miModal">
+    <div class="contenidoModal">
+        <button class="btn" onclick="CerrarModales();">
+            <span style="color: black;">&times;</span>
+        </button>
+        <!--Contenido del modal-->
+        <div class="row">
+        <div class="col-md-4 offset-md-4 col-sm-12">
+            <p>¿Seguro de eliminar este elemento del Catálogo?</p>
+        </div>
+        <div class="col-md-8"></div>
+        <div class="col-md-4 offset-md-2 col-sm-12 p-2 text-center">
+            <button class="btn btn-outline-danger" onclick="Eliminar(0,true);">
+                <span>Sí</span>
             </button>
-            <!--Contenido del modal-->
-            <div class="row">
-            <div class="col-md-4 offset-md-4 col-sm-12">
-                <p>¿Seguro de eliminar este elemento del Catálogo?</p>
-            </div>
-            <div class="col-md-8"></div>
-            <div class="col-md-4 offset-md-2 col-sm-12 p-2 text-center">
-                <button class="btn btn-outline-danger" onclick="Eliminar(0,true);">
-                    <span>Sí</span>
-                </button>
-            </div>
-            <div class="col-md-4 col-sm-12 p-2 text-center">
-                <button class="btn btn-outline-primary" onclick="CerrarModales();">
-                    <span>No</span>
-                </button>
-            </div>
-            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 p-2 text-center">
+            <button class="btn btn-outline-primary" onclick="CerrarModales();">
+                <span>No</span>
+            </button>
+        </div>
         </div>
     </div>
+</div>
