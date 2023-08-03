@@ -1,7 +1,4 @@
-﻿@{
-}
-@{
-}
+@model List<ET.DTO.Almacenamiento_DTO>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 offset-md-4 col-sm-12 p-3">
@@ -32,6 +29,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach(var almacenamiento in Model)
+                        {
+                            <tr>
+                                <td>@almacenamiento.id</td>
+                                <td>@almacenamiento.descripcion</td>
+                                <td>@almacenamiento.capacidad</td>
+                                <td>@almacenamiento.consumoEnergia</td>
+                                <td>@almacenamiento.m2</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
@@ -115,4 +122,3 @@
         }
     </script>
 }
-
