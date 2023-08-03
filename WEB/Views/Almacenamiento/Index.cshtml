@@ -1,4 +1,19 @@
 @model List<ET.DTO.Almacenamiento_DTO>
+@section Scripts
+    {
+    <script type="text/javascript">
+        const LlamarModalAgregar = () => {
+            document.getElementById("modalAgregar").style.display = "block";
+        }
+        const CerrarModales = () => {
+            document.getElementById("modalAgregar").style.display = "none";
+            //document.getElementById("modalModificar").style.display = "none";
+        }
+        const Guardar = () => {
+
+        }
+    </script>
+}
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 offset-md-4 col-sm-12 p-3">
@@ -107,18 +122,4 @@
         </div>
     </div>
 </div>
-@section Scripts
-    {
-    <script type="text/javascript">
-        const LlamarModalAgregar = () => {
-            document.getElementById("modalAgregar").style.display = "block";
-        }
-        const CerrarModales = () => {
-            document.getElementById("modalAgregar").style.display = "none";
-            //document.getElementById("modalModificar").style.display = "none";
-        }
-        const Guardar = () => {
-            
-        }
-    </script>
-}
+
