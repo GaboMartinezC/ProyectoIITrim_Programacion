@@ -9973,19 +9973,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marti\\.nuget\\packages\\": {}
+    "C:\\Users\\Estudiante-20\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marti\\Documents\\Cotidiano\\ProyectoIITrim_GabrielMartinezCamareno11E\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj",
+      "projectUniqueName": "C:\\Users\\Estudiante-20\\Source\\Repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "C:\\Users\\marti\\Documents\\Cotidiano\\ProyectoIITrim_GabrielMartinezCamareno11E\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj",
-      "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marti\\Documents\\Cotidiano\\ProyectoIITrim_GabrielMartinezCamareno11E\\ProyectoIITrim_GabrielMartinezCamareno11E\\obj\\",
+      "projectPath": "C:\\Users\\Estudiante-20\\Source\\Repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj",
+      "packagesPath": "C:\\Users\\Estudiante-20\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Estudiante-20\\Source\\Repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Estudiante-20\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9993,20 +9998,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\marti\\Documents\\Cotidiano\\ProyectoIITrim_GabrielMartinezCamareno11E\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\marti\\Documents\\Cotidiano\\ProyectoIITrim_GabrielMartinezCamareno11E\\BL\\BL.csproj"
+            "C:\\Users\\Estudiante-20\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\Estudiante-20\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj"
             },
-            "C:\\Users\\marti\\Documents\\Cotidiano\\ProyectoIITrim_GabrielMartinezCamareno11E\\ET\\ET.csproj": {
-              "projectPath": "C:\\Users\\marti\\Documents\\Cotidiano\\ProyectoIITrim_GabrielMartinezCamareno11E\\ET\\ET.csproj"
+            "C:\\Users\\Estudiante-20\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
+              "projectPath": "C:\\Users\\Estudiante-20\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj"
             },
-            "C:\\Users\\marti\\Documents\\Cotidiano\\ProyectoIITrim_GabrielMartinezCamareno11E\\WEB\\WEB.csproj": {
-              "projectPath": "C:\\Users\\marti\\Documents\\Cotidiano\\ProyectoIITrim_GabrielMartinezCamareno11E\\WEB\\WEB.csproj"
+            "C:\\Users\\Estudiante-20\\Source\\Repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj": {
+              "projectPath": "C:\\Users\\Estudiante-20\\Source\\Repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj"
             }
           }
         }
@@ -10045,7 +10051,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
