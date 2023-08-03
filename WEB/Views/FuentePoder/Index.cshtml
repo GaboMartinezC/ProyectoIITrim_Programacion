@@ -1,4 +1,4 @@
-﻿
+@model List<ET.DTO.FuentePoder_DTO>
 @{
     ViewData["Title"] = "Fuente";
 }
@@ -34,6 +34,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach(var fuente in Model)
+                        {
+                            <tr>
+                                <td>@fuente.id</td>
+                                <td>@fuente.descripcion</td>
+                                <td>@fuente.cantidadConectoresSATA</td>
+                                <td>@fuente.cantidadConectoresPCIe</td>
+                                <td>@fuente.potencia</td>
+                                <td>@fuente.altura</td>
+                                <td>@fuente.ancho</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
@@ -117,5 +129,3 @@
         }
     </script>
 }
-
-
