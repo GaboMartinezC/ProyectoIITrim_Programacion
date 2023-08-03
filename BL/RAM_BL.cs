@@ -29,18 +29,21 @@ namespace BL
         {
             return dal.EliminarRAM(id);
         }
+        //Metodo que convierte una datatable a una lista 
         public List<RAM_DTO> BuscarRam()
         {
             List<RAM_DTO> retVal = new();
             DataTable listaRAM = dal.BuscarRAM();
             for (int i = 0; i < listaRAM.Rows.Count; i++)
             {
+                //Instancia un objeto ram DTO y llena sus datos con los del recorrido actual de la datatable
                 RAM_DTO ram = new RAM_DTO();
                 ram.Id = Convert.ToInt32(listaRAM.Rows[i]["ID"]);
                 ram.Descripcion = listaRAM.Rows[i]["DESCRIPCION"].ToString();
                 ram.VersionDDR =listaRAM.Rows[i]["VERSION_DDR"].ToString();
                 ram.Capacidad = listaRAM.Rows[i]["CAPACIDAD"].ToString();
                 ram.ConsumoEnergia = listaRAM.Rows[i]["CAPACIDAD"].ToString();
+                //los introduce en la lista
                 retVal.Add(ram);
             }
             return retVal;
