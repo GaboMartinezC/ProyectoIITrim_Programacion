@@ -25,24 +25,23 @@ namespace WEB.Controllers
         /// <summary>
         /// POST: ProductController/Create
         /// </summary>
-        /// <param name="ram"></param>
+        /// <param name="descrip"></param>
+        /// <param name="cons"></param>
+        /// <param name="ddr"></param>
+        /// <param name="cap"></param>
         /// <returns></returns>
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(RAM_DTO ram)
+        public ActionResult Create(string descrip, double cons, int ddr, int cap)
         {
             try
             {
-                RAM ramEstatica = new();
-                ramEstatica.Descripcion = ram.Descripcion;
-                ramEstatica.VersionDDR = Convert.ToInt32(ram.VersionDDR);
-                ramEstatica.ConsumoEnergia = Convert.ToDouble(ram.ConsumoEnergia);
-                ramEstatica.Capacidad = Convert.ToInt32(ram.Capacidad);
-                bool resp = bl.IngresarRam(ramEstatica);
-                if (resp)
-                    return RedirectToAction("Index");
-                else
-                    return View();
+                RAM ram = new RAM();
+                ram.Descripcion = descrip;
+                ram.ConsumoEnergia = cons;
+                ram.VersionDDR = ddr;
+                ram.Capacidad = cap;
+                bl.IngresarRam(ram);
+                return RedirectToAction("Index");
             }
             catch(Exception ex)
             {

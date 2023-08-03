@@ -3,11 +3,34 @@
 {
     <script type="text/javascript">
         let idGlobal;
+        const Guardar = () => {
+            let comboDDR = document.getElementById("txtDDR");
+            let comboCapacidad = document.getElementById("txtCapacidad");
+            $.ajax({
+                url: "/Ram/Create", 
+                type: "POST",
+                data: {
+                    descrip: document.getElementById("txtDescripcion").value,
+                    cons: document.getElementById("txtConsumo").value,
+                    ddr: comboDDR.options[comboDDR.selectedIndex].text,
+                    cap: comboCapacidad.options[comboCapacidad.selectedIndex].text
+                },
+                success: function (respuesta) {
+                    window.location.reload();
+                },
+                error: function () {
+                    alert("Error al guardar el elemento");
+                }
+            });
+            CerrarModales();
+            window.location.reload();
+        }
         const LlamarVistaAgregar = () => {
-            window.location.replace("/Ram/Create");
+            document.getElementById("modalGuardado").style.display = "block";
         }
         const CerrarModales = () => {
             document.getElementById("modalConfirmarBorrado").style.display = "none";
+            document.getElementById("modalGuardado").style.display = "none";
         }
         const Eliminar = (id, confirmado) => {
             if (id!=0)
@@ -17,7 +40,6 @@
             else
             {
                 id = idGlobal;
-                CerrarModales();
                 $.ajax({
                     url: "/Ram/Delete", // URL del controlador y acción
                     type: "POST",
@@ -30,6 +52,20 @@
                     }
                 });
             }
+        }
+        const SoloNumeros = (evt) => {
+            if (window.event) 
+                keynum = evt.keyCode;
+            else
+                keynum = evt.which;
+            if (keynum > 47 && keynum < 58 || keynum == 8 || keynum == 13)
+                return true;
+            else
+            {
+                swal("Ha ocurrido un problema", "Ingrese unicamente numeros", "success");
+                return false;
+            }
+                
         }
     </script>
 }
@@ -115,6 +151,66 @@
                 <span>No</span>
             </button>
         </div>
+        </div>
+    </div>
+</div>
+<!--Modal de Guardado-->
+<div id="modalGuardado" class="miModal">
+    <div class="contenidoModal">
+        <button class="btn" onclick="CerrarModales();">
+            <span style="color: black;">&times;</span>
+        </button>
+        <!--Contenido del modal-->
+        <div class="row">
+            <div class="col-md-4 offset-md-4 col-sm-12">
+                <h1 class="subtitle">Guardar</h1>
+            </div>
+            <div class="col-md-8"></div>
+            <div class="col-md-8 offset-md-2 col-sm-12">
+                <form action="" class="form-control">
+                    <!--Organizacion de los inputs con columnas nested-->
+                    <div class="row">
+                        <div class="col-md-12 p-3">
+                            <input id="txtDescripcion" class="form-control" type="text" placeholder="Descripcion">
+                        </div>
+                        <div class="col-md-12 p-3">
+                            <input id="txtConsumo" class="form-control" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event)">
+                        </div>
+                        <div class="col-md-4 offset-md-2 col-sm-12 p-2">
+                            <label for="">DDR</label>
+                            <select id="txtDDR" class="form-control">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-12 p-2">
+                            <label for="">Capacidad</label>
+                            <select class="form-control" id="txtCapacidad">
+                                <option value="">2</option>
+                                <option value="">4</option>
+                                <option value="">6</option>
+                                <option value="">8</option>
+                                <option value="">12</option>
+                                <option value="">16</option>
+                                <option value="">32</option>
+                                <option value="">64</option>
+                                <option value="">128</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 offset-md-4 col-sm-12 p-2">
+                            <button class="btn btn-outline-dark" onclick="Guardar();">
+                                <span>Guardar &plus;</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+            <div></div>
         </div>
     </div>
 </div>
