@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj": {}
+    "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj": {
+    "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj",
         "projectName": "BL",
-        "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj",
-        "packagesPath": "C:\\Users\\Estudiante-06\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\obj\\",
+        "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj",
+        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\BL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Estudiante-06\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,18 +22,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj"
+              "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
-                "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj"
+              "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
+                "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj"
               }
             }
           }
@@ -73,25 +68,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj": {
+    "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\Estudiante-06\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\DAL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Estudiante-06\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,15 +90,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
-                "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj"
+              "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
+                "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj"
               }
             }
           }
@@ -143,25 +133,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
+    "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj",
         "projectName": "ET",
-        "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj",
-        "packagesPath": "C:\\Users\\Estudiante-06\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\obj\\",
+        "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj",
+        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marti\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Estudiante-06\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -169,7 +155,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -209,25 +194,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj": {
+    "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj",
         "projectName": "GUI",
-        "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj",
-        "packagesPath": "C:\\Users\\Estudiante-06\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\obj\\",
+        "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\GUI.csproj",
+        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ProyectoIITrim_GabrielMartinezCamareno11E\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Estudiante-06\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -235,21 +216,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj": {
-                "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj"
+              "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj": {
+                "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj"
               },
-              "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
-                "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj"
+              "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
+                "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj"
               },
-              "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj": {
-                "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj"
+              "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj": {
+                "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj"
               }
             }
           }
@@ -288,25 +268,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj": {
+    "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj",
         "projectName": "WEB",
-        "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj",
-        "packagesPath": "C:\\Users\\Estudiante-06\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\WEB\\obj\\",
+        "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\WEB\\WEB.csproj",
+        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\WEB\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Estudiante-06\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -314,18 +290,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj": {
-                "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj"
+              "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj": {
+                "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\BL\\BL.csproj"
               },
-              "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
-                "projectPath": "C:\\Users\\Estudiante-06\\Source\\Repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj"
+              "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj": {
+                "projectPath": "C:\\Users\\marti\\source\\repos\\ProyectoIITrim_Programacion\\ET\\ET.csproj"
               }
             }
           }
@@ -364,7 +339,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -11,6 +11,7 @@ namespace ET.DTO
         public int id { get; set; }
         public string descripcion { get; set; }
         public int idFactorForma { get; set; }
+        public string descripFactorForm { get; set; }
         public bool refrigeracionLiquida { get; set; }
     }
 }

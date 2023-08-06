@@ -11,6 +11,7 @@ namespace ET.DTO
         public int id { get; set; }
         public string descripcion { get; set; }
         public int idSocket { get; set; }
-        public float consumoEnergetico { get; set; }
+        public string descripcionSocket { get; set; }
+        public double consumoEnergetico { get; set; }
     }
 }
