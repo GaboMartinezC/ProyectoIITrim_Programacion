@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\marti\source\repos\ProyectoIITrim_Programacion\WEB
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Almacenamiento/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxtYWNlbmFtaWVudG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Almacenamiento/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxtYWNlbmFtaWVudG9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Almacenamiento/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxtYWNlbmFtaWVudG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/RAM/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUkFNXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/RAM/Index.cshtml]

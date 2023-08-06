@@ -49,21 +49,30 @@ namespace WEB.Controllers
             }
 
         }
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            return View();
+            var listadoProd = bl.BuscarRam();
+            RAM_DTO ram = listadoProd.Where(p => p.Id == id).FirstOrDefault();
+            return View(ram);
         }
-        public ActionResult Edit(int id, string descrip, double cons, int ddr, int cap)
+        /// <summary>
+        /// POST: ProductController/Delete/5
+        /// </summary>
+        /// <param name="ram"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Edit(RAM_DTO ram)
         {
             try
             {
-                RAM ram = new RAM();
-                ram.Id = id;
-                ram.Descripcion = descrip;
-                ram.ConsumoEnergia = cons;
-                ram.VersionDDR = ddr;
-                ram.Capacidad = cap;
-                bl.ActualizarRam(ram);
+                RAM ramET = new();
+                ramET.Id = ram.Id;
+                ramET.Descripcion = ram.Descripcion;
+                ramET.ConsumoEnergia = Convert.ToDouble(ram.ConsumoEnergia);
+                ramET.VersionDDR = Convert.ToInt32(ram.VersionDDR);
+                ramET.Capacidad = Convert.ToInt32(ram.Capacidad);
+                ramET.ConsumoEnergia = Convert.ToDouble(ram.ConsumoEnergia);
+                bl.ActualizarRam(ramET);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)

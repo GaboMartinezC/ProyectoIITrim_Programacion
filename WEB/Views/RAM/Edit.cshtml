@@ -1,0 +1,55 @@
+﻿@model ET.DTO.RAM_DTO
+<!--Contenido del modal-->
+<div class="row">
+    <div class="col-md-4 offset-md-4 col-sm-12 text-center">
+        <h1 class="subtitle">Editar</h1>
+    </div>
+    <div class="col-md-8"></div>
+    <div class="col-md-8 offset-md-2 col-sm-12">
+        <form method="post" asp-controller = "Ram" asp-action="Edit" class="form-control">
+            <!--Organizacion de los inputs con columnas nested-->
+            <div class="row">
+                <div class="col-md-12 p-3">
+                    <label>Descripcion</label>
+                    <input asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion" value="@Model.Descripcion">
+                </div>
+                <div class="col-md-12 p-3">
+                    <label>Consumo Energetico</label>
+                    <input asp-for="ConsumoEnergia" class="form-control" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event)" value="@Model.ConsumoEnergia">
+                </div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-2">
+                    <label for="">DDR</label>
+                    <select asp-for="VersionDDR" class="form-control">
+                        <option selected value="@Model.VersionDDR">@Model.VersionDDR</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="col-md-4 col-sm-12 p-2">
+                    <label for="">Capacidad</label>
+                    <select class="form-control" asp-for="Capacidad">
+                        <option selected value="@Model.Capacidad">@Model.Capacidad</option>
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="12">12</option>
+                        <option value="16">16</option>
+                        <option value="32">32</option>
+                        <option value="64">64</option>
+                        <option value="128">128</option>
+                    </select>
+                </div>
+                <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <span>Guardar &plus;</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>

@@ -20,16 +20,21 @@
             let alto = document.getElementById("txtAlto").value;
             let ancho = document.getElementById("txtAncho").value;
             $.ajax({
-                url: "/Ram/Create",
+                url: "/FuentePoder/Create",
                 type: "POST",
                 data: {
-                    
+                    descrip: descripcion,
+                    cantSata: sata,
+                    cantPci: pcie,
+                    pot: potencia,
+                    anch: ancho,
+                    alt: alto
                 },
                 success: function (respuesta) {
                     window.location.reload();
                 },
                 error: function () {
-                    alert("Error al guardar el elemento");
+                    swal("Ha ocurrido un problema", "Error al guardar", "success");
                 }
             });
             CerrarModales();

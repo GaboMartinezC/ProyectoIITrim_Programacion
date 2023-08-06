@@ -1,16 +1,42 @@
 @model List<ET.DTO.Almacenamiento_DTO>
 @section Scripts
-    {
+{
     <script type="text/javascript">
-        const LlamarModalAgregar = () => {
-            document.getElementById("modalAgregar").style.display = "block";
-        }
-        const CerrarModales = () => {
-            document.getElementById("modalAgregar").style.display = "none";
-            //document.getElementById("modalModificar").style.display = "none";
+        let idGlobal;
+        const Borrar = () => {
+            document.getElementById("modalBorrar").style.display = "block";
         }
         const Guardar = () => {
-
+            window.location.replace("/Almacenamiento/Create");
+        }
+        const Modificar = (id) => {
+            window.location.replace("/Almacenamiento/Edit"+id);
+        }
+        const Eliminar = (id, confirmado) => {
+            if (id != 0)
+                idGlobal = id;
+            if (!confirmado)
+                document.getElementById("modalConfirmarBorrado").style.display = "block";
+            else 
+            {
+                id = idGlobal;
+                $.ajax({
+                    url: "/Almacenamiento/Delete",
+                    type: "POST",
+                    data: { id: id },
+                    success: function (respuesta) {
+                        swal("Exito!", "Eliminado", "success");
+                        window.location.reload();
+                    },
+                    error: function () {
+                        swal("Ha ocurrido un problema", "Error al eliminar", "success");
+                    }
+                });
+                document.getElementById("modalConfirmarBorrado").style.display = "none";
+            }
+        }
+        const CerrarModales = () => {
+            document.getElementById("modalConfirmarBorrado").style.display = "none";
         }
     </script>
 }
@@ -52,6 +78,12 @@
                                 <td>@almacenamiento.capacidad</td>
                                 <td>@almacenamiento.consumoEnergia</td>
                                 <td>@almacenamiento.m2</td>
+                                <td>
+                                    <button class="btn btn-warning" onclick="Modificar(@almacenamiento.id);"></button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger" onclick="Eliminar(@almacenamiento.id, false);"></button>
+                                </td>
                             </tr>
                         }
                     </tbody>
@@ -60,7 +92,7 @@
         </div>
         <div class="col-md-2 col-sm-12"></div>
         <div class="col-md-4 offset-md-4 p-2 col-sm-12 text-center">
-            <button class="btn btn-outline-dark" onclick="LlamarModalAgregar();">
+            <button class="btn btn-outline-dark" onclick="Guardar();">
                 <span>Añadir &plus;</span>
             </button>
         </div>
@@ -68,8 +100,8 @@
         <div class="col-md-2 col-sm-12"></div>
     </div>
 </div>
-<!--Modales de CU-->
-<div id="modalAgregar" class="miModal">
+<!--Modal de Borrado-->
+<div id="modalConfirmarBorrado" class="miModal">
     <div class="contenidoModal">
         <button class="btn" onclick="CerrarModales();">
             <span style="color: black;">&times;</span>
@@ -77,49 +109,19 @@
         <!--Contenido del modal-->
         <div class="row">
             <div class="col-md-4 offset-md-4 col-sm-12">
-                <h1 class="subtitle">Guardar</h1>
+                <p>¿Seguro de eliminar este elemento del Catálogo?</p>
             </div>
             <div class="col-md-8"></div>
-            <div class="col-md-8 offset-md-2 col-sm-12">
-                <form action="" class="form-control">
-                    <!--Organizacion de los inputs con columnas nested-->
-                    <div class="row">
-                        <div class="col-md-12 p-3">
-                            <input id="txtDescripcion" class="form-control" type="text" placeholder="Descripcion">
-                        </div>
-                        <div class="col-md-12 p-3">
-                            <input id="txtConsumo" class="form-control" type="text" placeholder="Consumo (W)">
-                        </div>
-                        <div class="col-md-4 offset-md-2 col-sm-12 p-4">
-                            <label for="">Es m.2</label><br/>
-                            <input class="form-check-input" type="checkbox" value="" id="txtM2">
-                        </div>
-                        <div class="col-md-4 col-sm-12 p-2">
-                            <label for="">Capacidad</label>
-                            <select class="form-control" id="txtCapacidad">
-                                <option value="">2</option>
-                                <option value="">4</option>
-                                <option value="">6</option>
-                                <option value="">8</option>
-                                <option value="">12</option>
-                                <option value="">16</option>
-                                <option value="">32</option>
-                                <option value="">64</option>
-                                <option value="">128</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4 offset-md-4 col-sm-12 p-2">
-                            <button class="btn btn-outline-dark" onclick="Guardar();">
-                                <span>Guardar &plus;</span>
-                            </button>
-                        </div>
-
-                    </div>
-                </form>
+            <div class="col-md-4 offset-md-2 col-sm-12 p-2 text-center">
+                <button class="btn btn-outline-danger" onclick="Eliminar(0,true);">
+                    <span>Sí</span>
+                </button>
             </div>
-            <div class="col-md-2"></div>
-            <div></div>
+            <div class="col-md-4 col-sm-12 p-2 text-center">
+                <button class="btn btn-outline-primary" onclick="CerrarModales();">
+                    <span>No</span>
+                </button>
+            </div>
         </div>
     </div>
 </div>
-

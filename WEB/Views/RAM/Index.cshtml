@@ -19,11 +19,14 @@
                     window.location.reload();
                 },
                 error: function () {
-                    alert("Error al guardar el elemento");
+                    swal("Ha ocurrido un problema", "Error al guardar", "success");
                 }
             });
             CerrarModales();
             window.location.reload();
+        }
+        const Modificar = (id) => {
+            window.location.replace("/Ram/Edit/" + id);
         }
         const LlamarVistaAgregar = () => {
             document.getElementById("modalGuardado").style.display = "block";
@@ -48,7 +51,7 @@
                         window.location.reload();
                     },
                     error: function () {
-                        alert("Error al eliminar el elemento");
+                        swal("Ha ocurrido un problema", "Error al eliminar", "success");
                     }
                 });
             }
@@ -210,7 +213,6 @@
                 </form>
             </div>
             <div class="col-md-2"></div>
-            <div></div>
         </div>
     </div>
 </div>

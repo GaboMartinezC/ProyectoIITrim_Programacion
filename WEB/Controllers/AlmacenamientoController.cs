@@ -17,36 +17,30 @@ namespace WEB.Controllers
         {
             return View();
         }
-        public ActionResult Create(string descrip, int capacidad, double cons, bool m2)
+        [HttpPost]
+        public ActionResult Create(Almacenamiento almacenamiento)
         {
             try
             {
-                Almacenamiento almacenamiento = new();
-                almacenamiento.Descripcion = descrip;
-                almacenamiento.Capacidad = capacidad;
-                almacenamiento.ConsumoEnergia = cons;
-                almacenamiento.M2 = m2;
-                bl.IngresarAlmacenamiento(almacenamiento);
-                return RedirectToAction("Index");
+                if(bl.IngresarAlmacenamiento(almacenamiento))
+                    return RedirectToAction("Index");
+                else
+                    return View();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
             return View();
         }
-        public ActionResult Edit(int id, string descrip, int capacidad, double cons, bool m2)
+        [HttpPost]
+        public ActionResult Edit(Almacenamiento almacenamiento)
         {
             try
             {
-                Almacenamiento almacenamiento = new();
-                almacenamiento.Descripcion = descrip;
-                almacenamiento.Capacidad = capacidad;
-                almacenamiento.ConsumoEnergia = cons;
-                almacenamiento.M2 = m2;
                 bl.ActualizarAlmacenamiento(almacenamiento);
                 return RedirectToAction("Index");
             }
@@ -59,6 +53,7 @@ namespace WEB.Controllers
         {
             return View();
         }
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             try
