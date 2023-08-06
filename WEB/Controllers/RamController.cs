@@ -49,6 +49,28 @@ namespace WEB.Controllers
             }
 
         }
+        public ActionResult Edit()
+        {
+            return View();
+        }
+        public ActionResult Edit(int id, string descrip, double cons, int ddr, int cap)
+        {
+            try
+            {
+                RAM ram = new RAM();
+                ram.Id = id;
+                ram.Descripcion = descrip;
+                ram.ConsumoEnergia = cons;
+                ram.VersionDDR = ddr;
+                ram.Capacidad = cap;
+                bl.ActualizarRam(ram);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public ActionResult Delete()
         {
             return View();

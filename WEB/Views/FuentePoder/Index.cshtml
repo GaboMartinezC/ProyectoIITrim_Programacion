@@ -2,6 +2,40 @@
 @{
     ViewData["Title"] = "Fuente";
 }
+@section Scripts
+    {
+    <script type="text/javascript">
+        const LlamarModalAgregar = () => {
+            document.getElementById("modalAgregar").style.display = "block";
+        }
+        const CerrarModales = () => {
+            document.getElementById("modalAgregar").style.display = "none";
+            //document.getElementById("modalModificar").style.display = "none";
+        }
+        const Guardar = () => {
+            let descripcion = document.getElementById("txtDescripcion").value;
+            let potencia = document.getElementById("txtPotencia").value;
+            let sata = document.getElementById("txtSATA").value;
+            let pcie = document.getElementById("txtPCIe").value;
+            let alto = document.getElementById("txtAlto").value;
+            let ancho = document.getElementById("txtAncho").value;
+            $.ajax({
+                url: "/Ram/Create",
+                type: "POST",
+                data: {
+                    
+                },
+                success: function (respuesta) {
+                    window.location.reload();
+                },
+                error: function () {
+                    alert("Error al guardar el elemento");
+                }
+            });
+            CerrarModales();
+        }
+    </script>
+}
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 offset-md-4 col-sm-12 p-3">
@@ -80,32 +114,31 @@
                             <input id="txtDescripcion" class="form-control" type="text" placeholder="Descripcion">
                         </div>
                         <div class="col-md-12 p-3">
-                            <input id="txtConsumo" class="form-control" type="text" placeholder="Consumo (W)">
+                            <input id="txtPotencia" class="form-control" type="text" placeholder="Potencia (W)">
                         </div>
-                        <div class="col-md-4 offset-md-2 col-sm-12 p-4">
-                            <label for="">Es m.2</label><br />
-                            <input class="form-check-input" type="checkbox" value="" id="txtM2">
+                        <div class="col-md-12 p-2 text-center">
+                            <label>Cantidad de Puertos:</label>
                         </div>
-                        <div class="col-md-4 col-sm-12 p-2">
-                            <label for="">Capacidad</label>
-                            <select class="form-control" id="txtCapacidad">
-                                <option value="">2</option>
-                                <option value="">4</option>
-                                <option value="">6</option>
-                                <option value="">8</option>
-                                <option value="">12</option>
-                                <option value="">16</option>
-                                <option value="">32</option>
-                                <option value="">64</option>
-                                <option value="">128</option>
-                            </select>
+                        <div class="col-md-4 offset-md-2 col-sm-12 p-3">
+                            <input id="txtSATA" class="form-control" type="number" placeholder="SATA">
+                        </div>
+                        <div class="col-md-4 col-sm-12 p-3">
+                            <input id="txtPCIe" class="form-control" type="number" placeholder="PCIe">
+                        </div>
+                        <div class="col-md-12 p-2 text-center">
+                            <label>Medidas:</label>
+                        </div>
+                        <div class="col-md-4 offset-md-2 col-sm-12 p-3">
+                            <input id="txtAlto" class="form-control" type="text" placeholder="Altura">
+                        </div>
+                        <div class="col-md-4 col-sm-12 p-3">
+                            <input id="txtAncho" class="form-control" type="text" placeholder="Anchura">
                         </div>
                         <div class="col-md-4 offset-md-4 col-sm-12 p-2">
                             <button class="btn btn-outline-dark" onclick="Guardar();">
                                 <span>Guardar &plus;</span>
                             </button>
                         </div>
-
                     </div>
                 </form>
             </div>
@@ -114,18 +147,4 @@
         </div>
     </div>
 </div>
-@section Scripts
-    {
-    <script type="text/javascript">
-        const LlamarModalAgregar = () => {
-            document.getElementById("modalAgregar").style.display = "block";
-        }
-        const CerrarModales = () => {
-            document.getElementById("modalAgregar").style.display = "none";
-            //document.getElementById("modalModificar").style.display = "none";
-        }
-        const Guardar = () => {
-            
-        }
-    </script>
-}
+
