@@ -1,4 +1,18 @@
 ﻿@model ET.DTO.FuentePoder_DTO
+<script>
+    const SoloNumeros = (evt) => {
+        if (window.event)
+            keynum = evt.keyCode;
+        else
+            keynum = evt.which;
+        if (keynum > 47 && keynum < 58 || keynum == 8 || keynum == 13)
+            return true;
+        else {
+            swal("Ha ocurrido un problema", "Ingrese unicamente numeros", "success");
+            return false;
+        }
+    }
+</script>
 <div class="row">
     <div class="col-md-4 offset-md-4 col-sm-12 text-center">
         <h1 class="subtitle">Editar</h1>
@@ -14,7 +28,7 @@
                 </div>
                 <div class="col-md-12 p-3">
                     <label>Potencia:</label>
-                    <input asp-for="potencia" class="form-control" type="text" placeholder="Potencia (W)" value="@Model.potencia">
+                    <input asp-for="potencia" class="form-control" type="text" placeholder="Potencia (W)" value="@Model.potencia" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-12 p-2 text-center">
                     <label>Cantidad de Puertos:</label>
@@ -32,11 +46,11 @@
                 </div>
                 <div class="col-md-4 offset-md-2 col-sm-12 p-3">
                     <label>Altura:</label>
-                    <input asp-for="altura" class="form-control" type="text" placeholder="Altura" value="@Model.altura">
+                    <input asp-for="altura" class="form-control" type="text" placeholder="Altura" value="@Model.altura" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-4 col-sm-12 p-3">
                     <label>Anchura</label>
-                    <input asp-for="ancho" class="form-control" type="text" placeholder="Anchura" value="@Model.ancho">
+                    <input asp-for="ancho" class="form-control" type="text" placeholder="Anchura" value="@Model.ancho" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
                     <button class="btn btn-outline-dark" type="submit">

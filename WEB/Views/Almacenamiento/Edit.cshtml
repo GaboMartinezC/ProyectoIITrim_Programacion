@@ -1,4 +1,18 @@
 ﻿@model ET.DTO.Almacenamiento_DTO
+<script>
+    const SoloNumeros = (evt) => {
+        if (window.event)
+            keynum = evt.keyCode;
+        else
+            keynum = evt.which;
+        if (keynum > 47 && keynum < 58 || keynum == 8 || keynum == 13)
+            return true;
+        else {
+            swal("Ha ocurrido un problema", "Ingrese unicamente numeros", "success");
+            return false;
+        }
+    }
+</script>
 <div class="row">
     <div class="col-md-4 offset-md-4 col-sm-12 text-center">
         <h1 class="subtitle">Editar</h1>
@@ -12,14 +26,14 @@
                     <input asp-for="descripcion" class="form-control" type="text" placeholder="Descripcion" value="@Model.descripcion">
                 </div>
                 <div class="col-md-12 p-3">
-                    <input asp-for="consumoEnergia" class="form-control" type="text" placeholder="Consumo (W)" value="@Model.consumoEnergia">
+                    <input asp-for="consumoEnergia" class="form-control" type="text" placeholder="Consumo (W)" value="@Model.consumoEnergia" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-4 offset-md-2 col-sm-12 p-4">
                     <label for="">Es m.2:</label>
                     <input class="form-check-input" type="checkbox" value="" asp-for="m2" value="@Model.m2">
                 </div>
                 <div class="col-md-4 col-sm-12 p-2">
-                    <input asp-for="capacidad" class="form-control" type="text" placeholder="Capacidad" value="@Model.capacidad">
+                    <input asp-for="capacidad" class="form-control" type="text" placeholder="Capacidad" value="@Model.capacidad" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-4 offset-md-4 col-sm-12 p-2">
                     <button class="btn btn-outline-dark" type="submit">

@@ -1,4 +1,18 @@
 ﻿@model ET.Almacenamiento
+<script>
+    const SoloNumeros = (evt) => {
+        if (window.event)
+            keynum = evt.keyCode;
+        else
+            keynum = evt.which;
+        if (keynum > 47 && keynum < 58 || keynum == 8 || keynum == 13)
+            return true;
+        else {
+            swal("Ha ocurrido un problema", "Ingrese unicamente numeros", "success");
+            return false;
+        }
+    }
+</script>
 <div class="row">
     <div class="col-md-4 offset-md-4 col-sm-12 text-center">
         <h1 class="subtitle">Guardar</h1>
@@ -12,14 +26,14 @@
                     <input asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion">
                 </div>
                 <div class="col-md-12 p-3">
-                    <input asp-for="ConsumoEnergia" class="form-control" type="text" placeholder="Consumo (W)">
+                    <input asp-for="ConsumoEnergia" class="form-control" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-4 offset-md-2 col-sm-12 p-4">
                     <label for="">Es m.2:</label>
                     <input class="form-check-input" type="checkbox" value="" asp-for="M2">
                 </div>
                 <div class="col-md-4 col-sm-12 p-2">
-                    <input asp-for="Capacidad" class="form-control" type="text" placeholder="Capacidad">
+                    <input asp-for="Capacidad" class="form-control" type="text" placeholder="Capacidad" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
                     <button class="btn btn-outline-dark" type="submit">

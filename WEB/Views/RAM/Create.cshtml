@@ -1,4 +1,21 @@
 ﻿@model ET.DTO.RAM_DTO
+@section scripts 
+{
+    <script>
+        const SoloNumeros = (evt) => {
+            if (window.event)
+                keynum = evt.keyCode;
+            else
+                keynum = evt.which;
+            if (keynum > 47 && keynum < 58 || keynum == 8 || keynum == 13)
+                return true;
+            else {
+                swal("Ha ocurrido un problema", "Ingrese unicamente numeros", "success");
+                return false;
+            }
+        }
+    </script>
+}
 <!--Contenido del modal-->
 <div class="row">
     <div class="col-md-4 offset-md-4 col-sm-12 text-center">
@@ -13,7 +30,7 @@
                     <input asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion" >
                 </div>
                 <div class="col-md-12 p-3">
-                    <input asp-for="ConsumoEnergia" class="form-control" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event)">
+                    <input asp-for="ConsumoEnergia" id="txtConsumo" class="form-control" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event)" onchange="ValidarNumerosNegativos(event,'txtConsumo')">
                 </div>
                 <div class="col-md-4 offset-md-2 col-sm-12 p-2">
                     <select asp-for="VersionDDR" class="form-control">
