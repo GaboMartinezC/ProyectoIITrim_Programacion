@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ET.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,6 @@ namespace ET
         private int capacidad;
         private double consumoEnergia;
         private bool m2;
-
         public int Id { get => id; set => id = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int Capacidad { get => capacidad; set => capacidad = value; }

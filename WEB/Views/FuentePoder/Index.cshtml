@@ -9,35 +9,30 @@
             document.getElementById("modalAgregar").style.display = "block";
         }
         const CerrarModales = () => {
-            document.getElementById("modalAgregar").style.display = "none";
-            //document.getElementById("modalModificar").style.display = "none";
+            document.getElementById("modalConfirmarBorrado").style.display = "none";
         }
         const Guardar = () => {
-            let descripcion = document.getElementById("txtDescripcion").value;
-            let potencia = document.getElementById("txtPotencia").value;
-            let sata = document.getElementById("txtSATA").value;
-            let pcie = document.getElementById("txtPCIe").value;
-            let alto = document.getElementById("txtAlto").value;
-            let ancho = document.getElementById("txtAncho").value;
-            $.ajax({
-                url: "/FuentePoder/Create",
-                type: "POST",
-                data: {
-                    descrip: descripcion,
-                    cantSata: sata,
-                    cantPci: pcie,
-                    pot: potencia,
-                    anch: ancho,
-                    alt: alto
-                },
-                success: function (respuesta) {
-                    window.location.reload();
-                },
-                error: function () {
-                    swal("Ha ocurrido un problema", "Error al guardar", "success");
-                }
-            });
-            CerrarModales();
+            window.location.replace("/FuentePoder/Create");
+        }
+        const Eliminar = (id, confirmado) => {
+            if (id != 0)
+                idGlobal = id;
+            if (!confirmado)
+                document.getElementById("modalConfirmarBorrado").style.display = "block";
+            else {
+                id = idGlobal;
+                $.ajax({
+                    url: "/FuentePoder/Delete",
+                    type: "POST",
+                    data: { id: id },
+                    success: function (respuesta) {
+                        window.location.reload();
+                    },
+                    error: function () {
+                        swal("Ha ocurrido un problema", "Error al eliminar", "success");
+                    }
+                });
+            }
         }
     </script>
 }
@@ -99,56 +94,28 @@
         <div class="col-md-2 col-sm-12"></div>
     </div>
 </div>
-<!--Modales de CU-->
-<div id="modalAgregar" class="miModal">
+<!--Modal de Borrado-->
+<div id="modalConfirmarBorrado" class="miModal">
     <div class="contenidoModal">
         <button class="btn" onclick="CerrarModales();">
             <span style="color: black;">&times;</span>
         </button>
         <!--Contenido del modal-->
         <div class="row">
-            <div class="col-md-4 offset-md-4 col-sm-12">
-                <h1 class="subtitle">Guardar</h1>
-            </div>
-            <div class="col-md-8"></div>
-            <div class="col-md-8 offset-md-2 col-sm-12">
-                <form action="" class="form-control">
-                    <!--Organizacion de los inputs con columnas nested-->
-                    <div class="row">
-                        <div class="col-md-12 p-3">
-                            <input id="txtDescripcion" class="form-control" type="text" placeholder="Descripcion">
-                        </div>
-                        <div class="col-md-12 p-3">
-                            <input id="txtPotencia" class="form-control" type="text" placeholder="Potencia (W)">
-                        </div>
-                        <div class="col-md-12 p-2 text-center">
-                            <label>Cantidad de Puertos:</label>
-                        </div>
-                        <div class="col-md-4 offset-md-2 col-sm-12 p-3">
-                            <input id="txtSATA" class="form-control" type="number" placeholder="SATA">
-                        </div>
-                        <div class="col-md-4 col-sm-12 p-3">
-                            <input id="txtPCIe" class="form-control" type="number" placeholder="PCIe">
-                        </div>
-                        <div class="col-md-12 p-2 text-center">
-                            <label>Medidas:</label>
-                        </div>
-                        <div class="col-md-4 offset-md-2 col-sm-12 p-3">
-                            <input id="txtAlto" class="form-control" type="text" placeholder="Altura">
-                        </div>
-                        <div class="col-md-4 col-sm-12 p-3">
-                            <input id="txtAncho" class="form-control" type="text" placeholder="Anchura">
-                        </div>
-                        <div class="col-md-4 offset-md-4 col-sm-12 p-2">
-                            <button class="btn btn-outline-dark" onclick="Guardar();">
-                                <span>Guardar &plus;</span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-2"></div>
-            <div></div>
+        <div class="col-md-4 offset-md-4 col-sm-12">
+            <p>¿Seguro de eliminar este elemento del Catálogo?</p>
+        </div>
+        <div class="col-md-8"></div>
+        <div class="col-md-4 offset-md-2 col-sm-12 p-2 text-center">
+            <button class="btn btn-outline-danger" onclick="Eliminar(0,true);">
+                <span>Sí</span>
+            </button>
+        </div>
+        <div class="col-md-4 col-sm-12 p-2 text-center">
+            <button class="btn btn-outline-primary" onclick="CerrarModales();">
+                <span>No</span>
+            </button>
+        </div>
         </div>
     </div>
 </div>

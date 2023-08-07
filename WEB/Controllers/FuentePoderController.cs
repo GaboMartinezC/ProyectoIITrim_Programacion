@@ -1,5 +1,6 @@
 ﻿using BL;
 using ET;
+using ET.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Build.Framework;
 
@@ -17,30 +18,15 @@ namespace WEB.Controllers
         {
             return View();
         }
-        /// <summary>
-        /// POST: ProductController/Create
-        /// </summary>
-        /// <param name="descrip"></param>
-        /// <param name="cantSata"></param>
-        /// <param name="cantPci"></param>
-        /// <param name="pot"></param>
-        /// <param name="anch"></param>
-        /// <param name="alt"></param>
-        /// <returns></returns>
         [HttpPost]
-        public ActionResult Create(string descrip, int cantSata, int cantPci, double pot, double anch, double alt)
+        public ActionResult Create(FuentePoder fuente)
         {
             try
             {
-                FuentePoder fuente = new();
-                fuente.Descripcion = descrip;
-                fuente.CantidadConectoresSATA = cantSata;
-                fuente.CantidadConectoresPCIe = cantPci;
-                fuente.Potencia = pot;
-                fuente.Ancho = anch;
-                fuente.Altura = alt;
-                bl.IngresarFuentePoder(fuente);
-                return RedirectToAction("Index");
+                if (bl.IngresarFuentePoder(fuente))
+                    return RedirectToAction("Index");
+                else
+                    return View();
             }
             catch (Exception ex)
             {
@@ -51,20 +37,22 @@ namespace WEB.Controllers
         {
             return View();
         }
-        public ActionResult Edit(int id, string descrip, int cantSata, int cantPci, double pot, double anch, double alt)
+        public ActionResult Edit(FuentePoder_DTO dto)
         {
             try
             {
                 FuentePoder fuente = new();
-                fuente.Id = id;
-                fuente.Descripcion = descrip;
-                fuente.CantidadConectoresSATA = cantSata;
-                fuente.CantidadConectoresPCIe = cantPci;
-                fuente.Potencia = pot;
-                fuente.Ancho = anch;
-                fuente.Altura = alt;
-                bl.ActualizarFuentePoder(fuente);
-                return RedirectToAction("Index");
+                fuente.Id = dto.id;
+                fuente.Descripcion = dto.descripcion;
+                fuente.CantidadConectoresSATA = dto.cantidadConectoresSATA;
+                fuente.CantidadConectoresPCIe = dto.cantidadConectoresPCIe;
+                fuente.Potencia = dto.potencia;
+                fuente.Ancho = dto.ancho;
+                fuente.Altura = dto.altura;
+                if (bl.ActualizarFuentePoder(fuente))
+                    return RedirectToAction("Index");
+                else
+                    return View();
             }
             catch (Exception ex)
             {

@@ -34,15 +34,25 @@ namespace WEB.Controllers
         }
         public ActionResult Edit(int id)
         {
-            return View();
+            var listadoAlm = bl.BuscarAlmacenamiento();
+            Almacenamiento_DTO alm = listadoAlm.Where(r => r.id == id).FirstOrDefault();
+            return View(alm);
         }
         [HttpPost]
-        public ActionResult Edit(Almacenamiento almacenamiento)
+        public ActionResult Edit(Almacenamiento_DTO almacenamiento)
         {
             try
             {
-                bl.ActualizarAlmacenamiento(almacenamiento);
-                return RedirectToAction("Index");
+                Almacenamiento almacenamientoET = new();
+                almacenamientoET.Id = almacenamiento.id;
+                almacenamientoET.Descripcion = almacenamiento.descripcion;
+                almacenamientoET.ConsumoEnergia = almacenamiento.consumoEnergia;
+                almacenamientoET.Capacidad = almacenamiento.capacidad;
+                almacenamientoET.M2 = almacenamiento.m2;
+                if (bl.ActualizarAlmacenamiento(almacenamientoET))
+                    return RedirectToAction("Index");
+                else
+                    return View();
             }
             catch (Exception ex)
             {

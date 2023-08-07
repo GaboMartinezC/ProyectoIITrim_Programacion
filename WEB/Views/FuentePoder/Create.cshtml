@@ -1,0 +1,44 @@
+﻿@model ET.FuentePoder
+<div class="row">
+    <div class="col-md-4 offset-md-4 col-sm-12 text-center">
+        <h1 class="subtitle">Guardar</h1>
+    </div>
+    <div class="col-md-8"></div>
+    <div class="col-md-8 offset-md-2 col-sm-12">
+        <form method="post" asp-action="Create" asp-asp-controller="FuentePoder" class="form-control">
+            <!--Organizacion de los inputs con columnas nested-->
+            <div class="row">
+                <div class="col-md-12 p-3">
+                    <input asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion">
+                </div>
+                <div class="col-md-12 p-3">
+                    <input asp-for="Potencia" class="form-control" type="text" placeholder="Potencia (W)">
+                </div>
+                <div class="col-md-12 p-2 text-center">
+                    <label>Cantidad de Puertos:</label>
+                </div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-3">
+                    <input asp-for="CantidadConectoresSATA" class="form-control" type="number" placeholder="SATA">
+                </div>
+                <div class="col-md-4 col-sm-12 p-3">
+                    <input asp-for="CantidadConectoresPCIe" class="form-control" type="number" placeholder="PCIe">
+                </div>
+                <div class="col-md-12 p-2 text-center">
+                    <label>Medidas:</label>
+                </div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-3">
+                    <input asp-for="Altura" class="form-control" type="text" placeholder="Altura">
+                </div>
+                <div class="col-md-4 col-sm-12 p-3">
+                    <input asp-for="Ancho" class="form-control" type="text" placeholder="Anchura">
+                </div>
+                <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <span>Guardar &plus;</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>

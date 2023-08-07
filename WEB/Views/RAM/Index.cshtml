@@ -44,11 +44,11 @@
             {
                 id = idGlobal;
                 $.ajax({
-                    url: "/Ram/Delete", // URL del controlador y acción
+                    url: "/Ram/Delete",
                     type: "POST",
                     data: { id: id }, 
                     success: function (respuesta) {
-                        window.location.reload();
+                        swal("Exito!", "Eliminado correctamente", "success");
                     },
                     error: function () {
                         swal("Ha ocurrido un problema", "Error al eliminar", "success");
