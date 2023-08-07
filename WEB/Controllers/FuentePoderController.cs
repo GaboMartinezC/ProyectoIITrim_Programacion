@@ -33,10 +33,13 @@ namespace WEB.Controllers
                 throw ex;
             }
         }
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            return View();
+            var listadoFuente = bl.BuscarFuentePoder();
+            FuentePoder_DTO dto = listadoFuente.Where(f => f.id == id).FirstOrDefault();
+            return View(dto);
         }
+        [HttpPost]
         public ActionResult Edit(FuentePoder_DTO dto)
         {
             try
@@ -63,6 +66,7 @@ namespace WEB.Controllers
         {
             return View();
         }
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             try

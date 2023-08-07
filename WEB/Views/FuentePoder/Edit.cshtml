@@ -1,0 +1,49 @@
+﻿@model ET.DTO.FuentePoder_DTO
+<div class="row">
+    <div class="col-md-4 offset-md-4 col-sm-12 text-center">
+        <h1 class="subtitle">Editar</h1>
+    </div>
+    <div class="col-md-8"></div>
+    <div class="col-md-8 offset-md-2 col-sm-12">
+        <form method="post" asp-action="Edit" asp-asp-controller="FuentePoder" class="form-control">
+            <!--Organizacion de los inputs con columnas nested-->
+            <div class="row">
+                <div class="col-md-12 p-3">
+                    <label>Descripcion:</label>
+                    <input asp-for="descripcion" class="form-control" type="text" placeholder="Descripcion" value="@Model.descripcion">
+                </div>
+                <div class="col-md-12 p-3">
+                    <label>Potencia:</label>
+                    <input asp-for="potencia" class="form-control" type="text" placeholder="Potencia (W)" value="@Model.potencia">
+                </div>
+                <div class="col-md-12 p-2 text-center">
+                    <label>Cantidad de Puertos:</label>
+                </div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-3">
+                    <label>SATA:</label>
+                    <input asp-for="cantidadConectoresSATA" class="form-control" type="number" placeholder="SATA" value="@Model.cantidadConectoresSATA">
+                </div>
+                <div class="col-md-4 col-sm-12 p-3">
+                    <label>PCIe:</label>
+                    <input asp-for="cantidadConectoresPCIe" class="form-control" type="number" placeholder="PCIe" value="@Model.cantidadConectoresPCIe">
+                </div>
+                <div class="col-md-12 p-2 text-center">
+                    <label>Medidas:</label>
+                </div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-3">
+                    <label>Altura:</label>
+                    <input asp-for="altura" class="form-control" type="text" placeholder="Altura" value="@Model.altura">
+                </div>
+                <div class="col-md-4 col-sm-12 p-3">
+                    <label>Anchura</label>
+                    <input asp-for="ancho" class="form-control" type="text" placeholder="Anchura" value="@Model.ancho">
+                </div>
+                <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <span>Guardar &plus;</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2"></div>

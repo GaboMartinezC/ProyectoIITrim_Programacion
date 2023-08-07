@@ -3,8 +3,9 @@
     ViewData["Title"] = "Fuente";
 }
 @section Scripts
-    {
+{
     <script type="text/javascript">
+        let idGlobal;
         const LlamarModalAgregar = () => {
             document.getElementById("modalAgregar").style.display = "block";
         }
@@ -13,6 +14,9 @@
         }
         const Guardar = () => {
             window.location.replace("/FuentePoder/Create");
+        }
+        const Modificar = (id) => {
+            window.location.replace("/FuentePoder/Edit/"+id);
         }
         const Eliminar = (id, confirmado) => {
             if (id != 0)
@@ -26,7 +30,7 @@
                     type: "POST",
                     data: { id: id },
                     success: function (respuesta) {
-                        window.location.reload();
+                        swal("Exito!", "Eliminado correctamente", "success");
                     },
                     error: function () {
                         swal("Ha ocurrido un problema", "Error al eliminar", "success");
@@ -78,6 +82,12 @@
                                 <td>@fuente.potencia</td>
                                 <td>@fuente.altura</td>
                                 <td>@fuente.ancho</td>
+                                <td>
+                                    <button class="btn btn-warning" onclick="Modificar(@fuente.id);"></button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger" onclick="Eliminar(@fuente.id, false);"></button>
+                                </td>
                             </tr>
                         }
                     </tbody>
@@ -86,7 +96,7 @@
         </div>
         <div class="col-md-2 col-sm-12"></div>
         <div class="col-md-4 offset-md-4 p-2 col-sm-12 text-center">
-            <button class="btn btn-outline-dark" onclick="LlamarModalAgregar();">
+            <button class="btn btn-outline-dark" onclick="Guardar();">
                 <span>Añadir &plus;</span>
             </button>
         </div>
