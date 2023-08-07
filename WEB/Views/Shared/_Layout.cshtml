@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/WEB.styles.css" asp-append-version="true" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-<body >
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -39,6 +39,20 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <script>
+                const SoloNumeros = (evt) => {
+                    if (window.event)
+                        keynum = evt.keyCode;
+                    else
+                        keynum = evt.which;
+                    if (keynum > 47 && keynum < 58 || keynum == 8 || keynum == 13)
+                        return true;
+                    else {
+                        swal("Ha ocurrido un problema", "Ingrese unicamente numeros", "success");
+                        return false;
+                    }
+                }
+            </script>
             @RenderBody()
         </main>
     </div>

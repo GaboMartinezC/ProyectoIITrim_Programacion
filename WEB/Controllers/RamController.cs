@@ -22,26 +22,15 @@ namespace WEB.Controllers
         {
             return View();
         }
-        /// <summary>
-        /// POST: ProductController/Create
-        /// </summary>
-        /// <param name="descrip"></param>
-        /// <param name="cons"></param>
-        /// <param name="ddr"></param>
-        /// <param name="cap"></param>
-        /// <returns></returns>
         [HttpPost]
-        public ActionResult Create(string descrip, double cons, int ddr, int cap)
+        public ActionResult Create(RAM ram)
         {
             try
             {
-                RAM ram = new RAM();
-                ram.Descripcion = descrip;
-                ram.ConsumoEnergia = cons;
-                ram.VersionDDR = ddr;
-                ram.Capacidad = cap;
-                bl.IngresarRam(ram);
-                return RedirectToAction("Index");
+                if (bl.IngresarRam(ram))
+                    return RedirectToAction("Index");
+                else
+                    return View();
             }
             catch(Exception ex)
             {
@@ -55,11 +44,6 @@ namespace WEB.Controllers
             RAM_DTO ram = listadoProd.Where(p => p.Id == id).FirstOrDefault();
             return View(ram);
         }
-        /// <summary>
-        /// POST: ProductController/Delete/5
-        /// </summary>
-        /// <param name="ram"></param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult Edit(RAM_DTO ram)
         {
@@ -84,11 +68,6 @@ namespace WEB.Controllers
         {
             return View();
         }
-        /// <summary>
-        /// POST: ProductController/Delete/5
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult Delete(int id)
         {
