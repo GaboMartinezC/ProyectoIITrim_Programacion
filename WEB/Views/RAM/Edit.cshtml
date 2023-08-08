@@ -14,7 +14,7 @@
                     <input asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion" value="@Model.Descripcion">
                 </div>
                 <div class="col-md-12 p-3">
-                    <label>Consumo Energetico</label>
+                    <label>Consumo Energetico (W)</label>
                     <input asp-for="ConsumoEnergia" class="form-control" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event)" value="@Model.ConsumoEnergia">
                 </div>
                 <div class="col-md-4 offset-md-2 col-sm-12 p-2">
@@ -29,7 +29,7 @@
                     </select>
                 </div>
                 <div class="col-md-4 col-sm-12 p-2">
-                    <label for="">Capacidad</label>
+                    <label for="">Capacidad (Gb)</label>
                     <select class="form-control" asp-for="Capacidad">
                         <option selected value="@Model.Capacidad">@Model.Capacidad</option>
                         <option value="2">2</option>

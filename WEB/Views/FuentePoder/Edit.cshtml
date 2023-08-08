@@ -27,7 +27,7 @@
                     <input asp-for="descripcion" class="form-control" type="text" placeholder="Descripcion" value="@Model.descripcion">
                 </div>
                 <div class="col-md-12 p-3">
-                    <label>Potencia:</label>
+                    <label>Potencia (W):</label>
                     <input asp-for="potencia" class="form-control" type="text" placeholder="Potencia (W)" value="@Model.potencia" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-12 p-2 text-center">
@@ -45,11 +45,11 @@
                     <label>Medidas:</label>
                 </div>
                 <div class="col-md-4 offset-md-2 col-sm-12 p-3">
-                    <label>Altura:</label>
+                    <label>Altura (Cm):</label>
                     <input asp-for="altura" class="form-control" type="text" placeholder="Altura" value="@Model.altura" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-4 col-sm-12 p-3">
-                    <label>Anchura</label>
+                    <label>Anchura (Cm):</label>
                     <input asp-for="ancho" class="form-control" type="text" placeholder="Anchura" value="@Model.ancho" onkeypress="SoloNumeros(event);">
                 </div>
                 <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">

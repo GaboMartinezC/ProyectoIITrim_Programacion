@@ -30,9 +30,10 @@
                     <input asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion" >
                 </div>
                 <div class="col-md-12 p-3">
-                    <input asp-for="ConsumoEnergia" id="txtConsumo" class="form-control" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event)" onchange="ValidarNumerosNegativos(event,'txtConsumo')">
+                    <input asp-for="ConsumoEnergia" id="txtConsumo" class="form-control" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event)">
                 </div>
                 <div class="col-md-4 offset-md-2 col-sm-12 p-2">
+                    <label for="">DDR:</label>
                     <select asp-for="VersionDDR" class="form-control">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -42,6 +43,7 @@
                     </select>
                 </div>
                 <div class="col-md-4 col-sm-12 p-2">
+                    <label for="">Capacidad (Gb):</label>
                     <select class="form-control" asp-for="Capacidad">
                         <option value="2">2</option>
                         <option value="4">4</option>
