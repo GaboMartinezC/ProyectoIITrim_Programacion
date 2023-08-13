@@ -19,7 +19,7 @@ namespace BL
             DataTable listaFuentes = dal.BuscarFuentePoder();
             for (int i = 0; i < listaFuentes.Rows.Count; i++)
             {
-                descripcion = listaFuentes.Rows[i]["DESCRIPCION"].ToString();
+                descripcion = listaFuentes.Rows[i]["DESCRIPCION_FUENTE"].ToString();
                 if (descripcion.Equals(fuentePoder.Descripcion))
                     return false;
             }
@@ -43,7 +43,7 @@ namespace BL
                 //Instancia un objeto fuente DTO y llena sus datos con los del recorrido actual de la datatable
                 FuentePoder_DTO fuente = new FuentePoder_DTO();
                 fuente.id = Convert.ToInt32(dt.Rows[i]["ID"]);
-                fuente.descripcion = dt.Rows[i]["DESCRIPCION"].ToString();
+                fuente.descripcion = dt.Rows[i]["DESCRIPCION_FUENTE"].ToString();
                 fuente.cantidadConectoresSATA = Convert.ToInt32(dt.Rows[i]["CANTIDAD_SATA"]);
                 fuente.cantidadConectoresPCIe = Convert.ToInt32(dt.Rows[i]["CANTIDAD_PCIE"]);
                 fuente.potencia = Convert.ToDouble(dt.Rows[i]["POTENCIA"]);

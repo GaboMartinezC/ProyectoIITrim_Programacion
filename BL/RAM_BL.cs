@@ -39,7 +39,7 @@ namespace BL
                 //Instancia un objeto ram DTO y llena sus datos con los del recorrido actual de la datatable
                 RAM_DTO ram = new RAM_DTO();
                 ram.Id = Convert.ToInt32(listaRAM.Rows[i]["ID"]);
-                ram.Descripcion = listaRAM.Rows[i]["DESCRIPCION"].ToString();
+                ram.Descripcion = listaRAM.Rows[i]["DESCRIPCION_RAM"].ToString();
                 ram.VersionDDR =listaRAM.Rows[i]["VERSION_DDR"].ToString();
                 ram.Capacidad = listaRAM.Rows[i]["CAPACIDAD"].ToString();
                 ram.ConsumoEnergia = listaRAM.Rows[i]["CAPACIDAD"].ToString();

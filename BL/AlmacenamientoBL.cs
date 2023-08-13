@@ -19,7 +19,7 @@ namespace BL
             DataTable listaDispAlmacenamiento = dal.BuscarAlmacenamiento();
             for (int i = 0; i<listaDispAlmacenamiento.Rows.Count; i++)
             {
-                descripcion = listaDispAlmacenamiento.Rows[i]["DESCRIPCION"].ToString();
+                descripcion = listaDispAlmacenamiento.Rows[i]["DESCRIPCION_ALMACENAMIENTO"].ToString();
                 if (descripcion.Equals(almacenamiento.Descripcion))
                     return false;
             }
@@ -43,7 +43,7 @@ namespace BL
                 //Instancia un objeto almacenamiento DTO y llena sus datos con los del recorrido actual de la datatable
                 Almacenamiento_DTO almDto = new();
                 almDto.id = Convert.ToInt32(dt.Rows[i]["ID"]);
-                almDto.descripcion = dt.Rows[i]["DESCRIPCION"].ToString();
+                almDto.descripcion = dt.Rows[i]["DESCRIPCION_ALMACENAMIENTO"].ToString();
                 almDto.capacidad = Convert.ToInt32(dt.Rows[i]["CAPACIDAD"]);
                 almDto.consumoEnergia = Convert.ToDouble(dt.Rows[i]["CONSUMO_ENERGIA"]);
                 almDto.m2 = Convert.ToBoolean(dt.Rows[i]["M2"]);

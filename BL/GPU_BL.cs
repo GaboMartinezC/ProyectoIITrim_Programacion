@@ -20,7 +20,7 @@ namespace BL
             {
                 GPU_DTO gpu = new();
                 gpu.id = Convert.ToInt32(dt.Rows[i]["ID"]);
-                gpu.descripcion = dt.Rows[i]["DESCRIPCION"].ToString();
+                gpu.descripcion = dt.Rows[i]["DESCRIPCION_GPU"].ToString();
                 gpu.cantidadConectores = Convert.ToInt32(dt.Rows[i]["CANTIDAD_CONECTORES"]);
                 gpu.pcie16 = Convert.ToBoolean(dt.Rows[i]["PCIE16"]);
                 gpu.consumoEnergia = Convert.ToDouble(dt.Rows[i]["CONSUMO_ENERGIA"]);

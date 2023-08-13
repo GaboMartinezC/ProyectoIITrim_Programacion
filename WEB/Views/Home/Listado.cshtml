@@ -1,0 +1,46 @@
+﻿@Model List<ET.DTO.Ensamblaje_DTO>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 col-sm-12 p-3">
+                <h1 class="title text-center">Realizar un ensamblaje</h1>
+            </div>
+            <div class="col-md-4 col-sm-12"></div>
+            <div class="col-md-8 offset-md-2 p-2 text-center">
+                <div class="table-responsive" style="max-height: 250px; overflow: scroll;">
+                    <table class="table table-hover table-sm" id="tablaFija" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Placa Madre</th>
+                                <th scope="col">Procesador</th>
+                                <th scope="col">Sist. Enfriamiento</th>
+                                <th scope="col">RAM</th>
+                                <th scope="col">Cantidad RAM</th>
+                                <th scope="col">GPU</th>
+                                <th scope="col">Almacenamiento</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Fuente</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var listado in Model)
+                            {
+                                <tr>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12"></div>
+            <div class="col-md-4 offset-md-4 p-2 col-sm-12 text-center">
+                <button class="btn btn-outline-dark" onclick="Guardar();">
+                    <span>Añadir &plus;</span>
+                </button>
+            </div>
+            <div class="col-md-8 p-2 col-sm-12 text-center"></div>
+            <div class="col-md-2 col-sm-12"></div>
+        </div>
+    </div>

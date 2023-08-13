@@ -20,7 +20,7 @@ namespace BL
             {
                 Case_DTO caseDto = new();
                 caseDto.id = Convert.ToInt32(dt.Rows[i]["ID"]);
-                caseDto.descripcion = dt.Rows[i]["DESCRIPCION"].ToString();
+                caseDto.descripcion = dt.Rows[i]["DESCRIPCION_CASE"].ToString();
                 caseDto.idFactorForma = Convert.ToInt32(dt.Rows[i]["ID_FACTOR_FORMA"]);
                 caseDto.descripFactorForm = dt.Rows[i]["DESCRIPCION_FACTOR_FORMA"].ToString();
                 caseDto.refrigeracionLiquida = Convert.ToBoolean(dt.Rows[i]["REFRIGERACION_LIQUIDA"]);

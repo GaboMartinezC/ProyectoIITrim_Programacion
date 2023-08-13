@@ -20,7 +20,7 @@ namespace BL
             {
                 CPU_DTO cpu = new();
                 cpu.id = Convert.ToInt32(dt.Rows[i]["ID"]);
-                cpu.descripcion = dt.Rows[i]["DESCRIPCION"].ToString();
+                cpu.descripcion = dt.Rows[i]["DESCRIPCION_CPU"].ToString();
                 cpu.idSocket = Convert.ToInt32(dt.Rows[i]["ID_SOCKET"]); 
                 cpu.descripcionSocket = dt.Rows[i]["DESCRIPCION_SOCKET"].ToString();
                 cpu.consumoEnergetico = Convert.ToDouble(dt.Rows[i]["CONSUMO_ENERGIA"]);
