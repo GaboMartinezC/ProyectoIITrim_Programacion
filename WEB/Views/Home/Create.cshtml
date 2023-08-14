@@ -1,1 +1,34 @@
 ﻿@model ET.DTO.EnsamblajeFull_DTO
+@section Scripts 
+{
+
+}
+<div class="row">
+    <div class="col-md-4 offset-md-4 col-sm-12 text-center">
+        <h1 class="subtitle">Crear Ensamblaje</h1>
+    </div>
+    <div class="col-md-8"></div>
+    <div class="col-md-8 offset-md-2 col-sm-12">
+        <form method="post" asp-action="Create" asp-asp-controller="Home" class="form-control">
+            <div class="row">
+                <div class="col-12 offset-md-1 col-md-2">
+                    <select asp-for="IdPlacaMadre" class="form-control">
+                        @foreach(var placa in Model.listaPlaca)
+                        {
+                            <option value="@placa.id">@placa.descripcion</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-12 offset-md-1 col-md-2"></div>
+                <div class="col-12 offset-md-1 col-md-2"></div>
+                <div class="col-6 offset-md-1 col-md-2"></div>
+                <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <span>Guardar &plus;</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>

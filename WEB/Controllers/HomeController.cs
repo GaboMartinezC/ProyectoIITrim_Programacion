@@ -24,7 +24,9 @@ namespace WEB.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            EnsamblajeFull_DTO dto = new();
+            dto.listaPlaca = new PlacaMadreBL().BuscarPlacaMadre();
+            return View(dto);
         }
         [HttpPost]
         public IActionResult Create(EnsamblajeFull_DTO dto)

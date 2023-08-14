@@ -11,7 +11,9 @@ namespace ET.DTO
         public int id { get; set; }
         public string descripcion { get; set; }
         public int idFactorForma { get; set; }
+        public string descripFacForma { get; set; }
         public int idSocket { get; set; }
+        public string descripSocket { get; set; }
         public int cantidadSATA { get; set; }
         public int cantidadPCIe16 { get; set; }
         public int cantidadPCIe8 { get; set; }
