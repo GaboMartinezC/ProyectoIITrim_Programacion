@@ -18,6 +18,14 @@ namespace BL
             dal.IngresarEnsamblaje(ensamblaje);
             return 0;
         }
+        private bool ValidarAlimentacion(Ensamblaje ensamblaje)
+        {
+            bool retVal = true;
+            double energiaTotalFuente = new FuentePoderDAL().BuscarFuentePoder(ensamblaje.IdFuente).Potencia;
+            double consumoEnergiaTotal = 0;
+            consumoEnergiaTotal += 1;
+            return retVal;
+        }
         public int ActualizarEnsamblaje(Ensamblaje ensamblaje)
         {
             dal.ActualizarEnsamblaje(ensamblaje);

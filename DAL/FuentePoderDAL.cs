@@ -98,6 +98,44 @@ namespace DAL
             }
             return retVal;
         }
+        public FuentePoder BuscarFuentePoder(int id)
+        {
+            FuentePoder retVal = new();
+            DataTable dt = new DataTable();
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpBuscarFuente", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            if (Convert.ToInt32(dt.Rows[i]["ID"])==id)
+                            {
+                                retVal.Id = Convert.ToInt32(dt.Rows[i]["ID"]);
+                                retVal.Descripcion = dt.Rows[i]["DESCRIPCION_FUENTE"].ToString();
+                                retVal.CantidadConectoresSATA = Convert.ToInt32(dt.Rows[i]["CANTIDAD_SATA"]);
+                                retVal.CantidadConectoresPCIe = Convert.ToInt32(dt.Rows[i]["CANTIDAD_PCIE"]);
+                                retVal.Potencia = Convert.ToDouble(dt.Rows[i]["POTENCIA"]);
+                                retVal.Altura = Convert.ToDouble(dt.Rows[i]["ALTURA"]);
+                                retVal.Ancho = Convert.ToDouble(dt.Rows[i]["ANCHO"]);
+                            }    
+                        }    
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return retVal;
+        }
         public bool EliminarFuentePoder(int id)
         {
             bool retVal = false;

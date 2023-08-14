@@ -24,8 +24,18 @@ namespace WEB.Controllers
         }
         public IActionResult Create()
         {
-            EnsamblajeFull_DTO dto = new();
-            dto.listaPlaca = new PlacaMadreBL().BuscarPlacaMadre();
+            EnsamblajeFull_DTO dto = new()
+            {
+                listaAlmacenamiento = new AlmacenamientoBL().BuscarAlmacenamiento(),
+                listaCase = new CaseBL().BuscarCase(),
+                listaCPU = new CPU_BL().BuscarCPU(),
+                listaSistEnfriamiento = new EnfriamientoBL().BuscarEnfriamiento(),
+                listaFuente = new FuentePoderBL().BuscarFuentePoder(),
+                listaGPU = new GPU_BL().BuscarGPU(),
+                listaPlaca = new PlacaMadreBL().BuscarPlacaMadre(),
+                listaRAM = new RAM_BL().BuscarRam()
+            };
+            
             return View(dto);
         }
         [HttpPost]

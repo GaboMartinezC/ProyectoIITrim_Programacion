@@ -11,7 +11,8 @@
     <div class="col-md-8 offset-md-2 col-sm-12">
         <form method="post" asp-action="Create" asp-asp-controller="Home" class="form-control">
             <div class="row">
-                <div class="col-12 offset-md-1 col-md-2">
+                <div class="col-12 col-md-2">
+                    <label>Placa Madre:</label>
                     <select asp-for="IdPlacaMadre" class="form-control">
                         @foreach(var placa in Model.listaPlaca)
                         {
@@ -19,9 +20,66 @@
                         }
                     </select>
                 </div>
-                <div class="col-12 offset-md-1 col-md-2"></div>
-                <div class="col-12 offset-md-1 col-md-2"></div>
-                <div class="col-6 offset-md-1 col-md-2"></div>
+                <div class="col-12 offset-md-1 col-md-2">
+                    <label>CPU:</label>
+                    <select asp-for="IdProcesador" class="form-control">
+                        @foreach (var cpu in Model.listaCPU)
+                        {
+                            <option value="@cpu.id">@cpu.descripcion</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-12 offset-md-1 col-md-2">
+                    <label>Sistema de Enfriamiento:</label>
+                    <select asp-for="IdEnfriamiento" class="form-control">
+                        @foreach (var enf in Model.listaSistEnfriamiento)
+                        {
+                            <option value="@enf.id">@enf.descripcion</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-6 offset-md-1 col-md-3">
+                    <label>RAM:</label>
+                    <div style="display: flex">
+                        <select asp-for="IdRam" class="form-control">
+                            @foreach (var ram in Model.listaRAM)
+                            {
+                                <option value="@ram.Id">@ram.Descripcion</option>
+                            }    
+                        </select>
+                        <input class="form-control" asp-for="CantidadRam" type="number" placeholder="Cant." />
+                    </div>
+                </div>
+                <div class="col-6 offset-md-3 col-md-2">
+                    <label>Case:</label>
+                    <select asp-for="IdCase" class="form-control">
+                        @foreach (var casePc in Model.listaCase)
+                        {
+                            <option value="@casePc.id">@casePc.descripcion</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-6 offset-md-1 col-md-3">
+                    <label>Almacenamiento:</label>
+                    <div style="display: flex">
+                        <select asp-for="IdUnidadAlmacenamiento" class="form-control">
+                            @foreach (var alm in Model.listaAlmacenamiento)
+                            {
+                                <option value="@alm.id">@alm.descripcion</option>
+                            }
+                        </select>
+                        <input class="form-control" asp-for="CantidadUnidades" type="number" placeholder="Cant." />
+                    </div>
+                </div>
+                <div class="col-md-12 col-3">
+                    <label>Fuente:</label>
+                    <select asp-for="IdFuente" class="form-control">
+                        @foreach (var fuente in Model.listaFuente)
+                        {
+                            <option value="@fuente.id">@fuente.descripcion</option>
+                        }
+                    </select>
+                </div>
                 <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
                     <button class="btn btn-outline-dark" type="submit">
                         <span>Guardar &plus;</span>
