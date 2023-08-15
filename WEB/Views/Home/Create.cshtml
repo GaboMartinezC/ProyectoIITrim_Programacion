@@ -80,6 +80,15 @@
                         }
                     </select>
                 </div>
+                <div class="col-12">
+                    <label>GPU:</label>
+                    <select asp-for="IdGrafica" class="form-control">
+                        @foreach (var gpu in Model.listaGPU)
+                        {
+                            <option value="@gpu.id">@gpu.descripcion</option>
+                        }
+                    </select>
+                </div>
                 <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
                     <button class="btn btn-outline-dark" type="submit">
                         <span>Guardar &plus;</span>

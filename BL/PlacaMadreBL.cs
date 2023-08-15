@@ -24,7 +24,7 @@ namespace BL
                 dto.idFactorForma = Convert.ToInt32(dt.Rows[i]["ID_FACTOR_FORMA"]);
                 dto.descripFacForma = dt.Rows[i]["DESCRIPCION_FACTOR_FORMA"].ToString();
                 dto.idSocket = Convert.ToInt32(dt.Rows[i]["ID_SOCKET"]);
-                dto.descripSocket = dt.Rows[i]["DESCRIPCION"].ToString();
+                dto.descripSocket = dt.Rows[i]["DESCRIPCION_SOCKET"].ToString();
                 dto.cantidadSATA = Convert.ToInt32(dt.Rows[i]["CANTIDAD_SATA"]);
                 dto.cantidadPCIe8 = Convert.ToInt32(dt.Rows[i]["CANTIDAD_PCIE8"]);
                 dto.cantidadPCIe16 = Convert.ToInt32(dt.Rows[i]["CANTIDAD_PCIE16"]);
