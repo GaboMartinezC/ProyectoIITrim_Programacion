@@ -23,7 +23,7 @@ namespace BL
                 enf.id = Convert.ToInt32(dt.Rows[i]["ID"]);
                 enf.descripcion = dt.Rows[i]["DESCRIPCION_ENFRIAMIENTO"].ToString();
                 enf.idSocket = Convert.ToInt32(dt.Rows[i]["ID_SOCKET"]);
-                enf.descripcion = dt.Rows[i]["DESCRIPCION_SOCKET"].ToString();
+                enf.descripcionSocket = dt.Rows[i]["DESCRIPCION_SOCKET"].ToString();
                 enf.liquido = Convert.ToBoolean(dt.Rows[i]["REFRIGERACION_LIQUIDA"]);
                 retVal.Add(enf);
             }

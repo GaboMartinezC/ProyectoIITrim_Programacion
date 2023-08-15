@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using ET;
 using System.Data;
+using ET.DTO;
 
 namespace DAL
 {
@@ -85,6 +86,39 @@ namespace DAL
                         SqlDataAdapter da = new SqlDataAdapter();
                         da.SelectCommand = cmd;
                         da.Fill(retVal);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return retVal;
+        }
+        public RAM BuscarRAM(int id)
+        {
+            RAM retVal = new();
+            DataTable dt = new DataTable();
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpBuscarRam", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            retVal.Id = Convert.ToInt32(dt.Rows[i]["ID"]);
+                            retVal.Descripcion = dt.Rows[i]["DESCRIPCION_RAM"].ToString();
+                            retVal.VersionDDR = Convert.ToInt32(dt.Rows[i]["VERSION_DDR"]);
+                            retVal.Capacidad = Convert.ToInt32(dt.Rows[i]["CAPACIDAD"]);
+                            retVal.ConsumoEnergia = Convert.ToInt32(dt.Rows[i]["CONSUMO_ENERGIA"]);
+                        }
                     }
                 }
                 catch (Exception ex)

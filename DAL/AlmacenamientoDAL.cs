@@ -94,9 +94,10 @@ namespace DAL
             }
             return retVal;
         }
-        public DataTable BuscarAlmacenamiento(int id)
+        public Almacenamiento BuscarAlmacenamiento(int id)
         {
-            DataTable retVal = new DataTable();
+            Almacenamiento retVal = new();
+            DataTable dt = new DataTable();
             using (var cn = GetConnection())
             {
                 try
@@ -108,7 +109,18 @@ namespace DAL
                         cmd.CommandType = CommandType.StoredProcedure;
                         SqlDataAdapter da = new SqlDataAdapter();
                         da.SelectCommand = cmd;
-                        da.Fill(retVal);
+                        da.Fill(dt);
+                        for(int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            if (Convert.ToInt32(dt.Rows[i]["ID"]) == id)
+                            {
+                                retVal.Id = Convert.ToInt32(dt.Rows[i]["ID"]);
+                                retVal.Descripcion = dt.Rows[i]["DESCRIPCION_ALMACENAMIENTO"].ToString();
+                                retVal.Capacidad = Convert.ToInt32(dt.Rows[i]["CAPACIDAD"]);
+                                retVal.ConsumoEnergia = Convert.ToDouble(dt.Rows[i]["CONSUMO_ENERGIA"]);
+                                retVal.M2 = Convert.ToBoolean(dt.Rows[i]["M2"]);
+                            }    
+                        }
                     }
                 }
                 catch (Exception ex)

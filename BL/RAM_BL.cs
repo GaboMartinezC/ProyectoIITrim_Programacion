@@ -42,7 +42,7 @@ namespace BL
                 ram.Descripcion = listaRAM.Rows[i]["DESCRIPCION_RAM"].ToString();
                 ram.VersionDDR =listaRAM.Rows[i]["VERSION_DDR"].ToString();
                 ram.Capacidad = listaRAM.Rows[i]["CAPACIDAD"].ToString();
-                ram.ConsumoEnergia = listaRAM.Rows[i]["CAPACIDAD"].ToString();
+                ram.ConsumoEnergia = listaRAM.Rows[i]["CONSUMO_ENERGIA"].ToString();
                 //los introduce en la lista
                 retVal.Add(ram);
             }
