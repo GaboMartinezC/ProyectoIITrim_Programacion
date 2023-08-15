@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
+using ET;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,9 +35,10 @@ namespace DAL
             }
             return retVal;
         }
-        public DataTable BuscarFactorForma(int id)
+        public FactorForma BuscarFactorForma(int id)
         {
-            DataTable retVal = new DataTable();
+            FactorForma retVal = new();
+            DataTable dt = new DataTable();
             using (var cn = GetConnection())
             {
                 try
@@ -48,7 +50,17 @@ namespace DAL
                         cmd.CommandType = CommandType.StoredProcedure;
                         SqlDataAdapter da = new SqlDataAdapter();
                         da.SelectCommand = cmd;
-                        da.Fill(retVal);
+                        da.Fill(dt);
+                        for (int i = 0; i < dt.Rows.Count; i++) 
+                        {
+                            if (Convert.ToInt32(dt.Rows[i]["ID"]) == id)
+                            {
+                                retVal.Id = Convert.ToInt32(dt.Rows[i]["ID"]);
+                                retVal.Descripcion = dt.Rows[i]["DESCRIPCION_FACTOR_FORMA"].ToString();
+                                retVal.Ancho = Convert.ToDouble(dt.Rows[i]["ANCHO"]);
+                                retVal.Largo = Convert.ToDouble(dt.Rows[i]["LARGO"]);
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)

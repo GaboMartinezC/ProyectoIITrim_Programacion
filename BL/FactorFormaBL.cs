@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class FactorForma
+    public class FactorFormaBL
     {
         private FactorFormaDAL dal = new();
         public List<FactorForma_DTO> BuscarFactorForma()

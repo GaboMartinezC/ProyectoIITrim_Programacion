@@ -108,7 +108,7 @@ namespace DAL
             }
             return retVal;
         }
-        public DataTable BuscarEnsamblaje()
+        public DataTable BuscarTodoEnsamblaje()
         {
             DataTable retVal = new DataTable();
             using (var cn = GetConnection())
@@ -116,7 +116,7 @@ namespace DAL
                 try
                 {
                     cn.Open();
-                    using (var cmd = new SqlCommand("SpBuscarEnsamblaje", cn))
+                    using (var cmd = new SqlCommand("SpBuscarRegistroEnsamblaje", cn))
                     {
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
