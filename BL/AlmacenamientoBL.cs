@@ -15,6 +15,7 @@ namespace BL
         private AlmacenamientoDAL dal = new AlmacenamientoDAL();
         public bool IngresarAlmacenamiento(Almacenamiento almacenamiento)
         {
+            //Comentario 1
             string descripcion = string.Empty; 
             DataTable listaDispAlmacenamiento = dal.BuscarAlmacenamiento();
             for (int i = 0; i<listaDispAlmacenamiento.Rows.Count; i++)
