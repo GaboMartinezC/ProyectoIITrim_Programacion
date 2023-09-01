@@ -12,6 +12,105 @@ namespace DAL
 {
     public class PlacaMadreDAL : Conexion
     {
+        public bool IngresarPlacaMadre(PlacaMadre placaMadre)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpIngresarPlacaMadre", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@descrip", placaMadre.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@idFactorForma", placaMadre.IdFactorForma));
+                        cmd.Parameters.Add(new SqlParameter("@idSocket", placaMadre.IdSocket));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadSATA", placaMadre.CantidadSATA));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadPcie16", placaMadre.CantidadPCIe16));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadPcie8", placaMadre.CantidadPCIe8));
+                        cmd.Parameters.Add(new SqlParameter("@versionDDR", placaMadre.VersionDDR));
+                        cmd.Parameters.Add(new SqlParameter("@cantSlotsRAM", placaMadre.CantidadSlotsRAM));
+                        cmd.Parameters.Add(new SqlParameter("@limiteRAM", placaMadre.LimiteRAM));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadM2", placaMadre.CantidadM2));
+                        cmd.Parameters.Add(new SqlParameter("@consumoEnergia", placaMadre.ConsumoEnergia));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
+        public bool ActualizarPlacaMadre(PlacaMadre placaMadre)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpActualizarPlacaMadre", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@id", placaMadre.Id));
+                        cmd.Parameters.Add(new SqlParameter("@descrip", placaMadre.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@idFactorForma", placaMadre.IdFactorForma));
+                        cmd.Parameters.Add(new SqlParameter("@idSocket", placaMadre.IdSocket));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadSATA", placaMadre.CantidadSATA));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadPcie16", placaMadre.CantidadPCIe16));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadPcie8", placaMadre.CantidadPCIe8));
+                        cmd.Parameters.Add(new SqlParameter("@versionDDR", placaMadre.VersionDDR));
+                        cmd.Parameters.Add(new SqlParameter("@cantSlotsRAM", placaMadre.CantidadSlotsRAM));
+                        cmd.Parameters.Add(new SqlParameter("@limiteRAM", placaMadre.LimiteRAM));
+                        cmd.Parameters.Add(new SqlParameter("@cantidadM2", placaMadre.CantidadM2));
+                        cmd.Parameters.Add(new SqlParameter("@consumoEnergia", placaMadre.ConsumoEnergia));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
+        public bool EliminarPlacaMadre(int id)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpEliminarPlacaMadre", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@id", id));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
         public DataTable BuscarPlacaMadre()
         {
             DataTable retVal = new DataTable();

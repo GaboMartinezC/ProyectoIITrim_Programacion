@@ -12,6 +12,91 @@ namespace DAL
 {
     public class GPU_DAL : Conexion
     {
+        public bool IngresarGPU(GPU gpu)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpIngresarAlmacenamiento", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@descrip", gpu.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@cantConectores", gpu.CantidadConectores));
+                        cmd.Parameters.Add(new SqlParameter("@pcie16", gpu.Pcie16));
+                        cmd.Parameters.Add(new SqlParameter("@consumo", gpu.ConsumoEnergia));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
+        public bool ActualizarGPU(GPU gpu)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpActualizarAlmacenamiento", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@id", gpu.Id));
+                        cmd.Parameters.Add(new SqlParameter("@descrip", gpu.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@cantConectores", gpu.CantidadConectores));
+                        cmd.Parameters.Add(new SqlParameter("@pcie16", gpu.Pcie16));
+                        cmd.Parameters.Add(new SqlParameter("@consumo", gpu.ConsumoEnergia));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
+        public bool EliminarGPU(int id)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpEliminarGPU", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@id", id));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
         public DataTable BuscarGPU()
         {
             DataTable retVal = new DataTable();

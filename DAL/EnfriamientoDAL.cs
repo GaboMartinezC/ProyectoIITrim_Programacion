@@ -12,6 +12,89 @@ namespace DAL
 {
     public class EnfriamientoDAL : Conexion
     {
+        public bool IngresarEnfriamiento(Enfriamiento enfriamiento)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpIngresarEnfriamiento", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@descrip", enfriamiento.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@idSocket", enfriamiento.IdSocket));
+                        cmd.Parameters.Add(new SqlParameter("@refrigeracionLiquida", enfriamiento.Liquido));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
+        public bool ActualizarEnfriamiento(Enfriamiento enfriamiento)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpActualizarEnfriamiento", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@id", enfriamiento.Id));
+                        cmd.Parameters.Add(new SqlParameter("@descrip", enfriamiento.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@idSocket", enfriamiento.IdSocket));
+                        cmd.Parameters.Add(new SqlParameter("@refrigeracionLiquida", enfriamiento.Liquido));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
+        public bool EliminarEnfriamiento(int id)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpEliminarEnfriamiento", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@id", id));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
         public DataTable BuscarEnfriamiento()
         {
             DataTable retVal = new DataTable();

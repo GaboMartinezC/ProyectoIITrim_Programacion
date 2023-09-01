@@ -12,6 +12,89 @@ namespace DAL
 {
     public class CaseDAL : Conexion
     {
+        public bool IngresarCase(Case caseCpu)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpIngresarCase", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@descrip", caseCpu.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@idFactorForma", caseCpu.IdFactorForma));
+                        cmd.Parameters.Add(new SqlParameter("@refLiquida", caseCpu.RefrigeracionLiquida));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
+        public bool ActualizarCase(Case caseCpu)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpActualizarCase", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@id", caseCpu.Id));
+                        cmd.Parameters.Add(new SqlParameter("@descrip", caseCpu.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@idFactorForma", caseCpu.IdFactorForma));
+                        cmd.Parameters.Add(new SqlParameter("@refLiquida", caseCpu.RefrigeracionLiquida));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
+        public bool EliminarCase(int id)
+        {
+            bool retVal = false;
+            using (var cn = GetConnection())
+            {
+                try
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand("SpEliminarCase", cn))
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@id", id));
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        reader.Close();
+                        retVal = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    retVal = false;
+                }
+            }
+            return retVal;
+        }
         public DataTable BuscarCase()
         {
             DataTable retVal = new DataTable();
