@@ -15,6 +15,7 @@ namespace BL
         private CPU_DAL dal = new();
         public bool IngresarCPU(CPU cpu)
         {
+            //comentario
             string descripcion = string.Empty;
             DataTable listCpu = dal.BuscarCPU();
             for (int i = 0; i < listCpu.Rows.Count; i++)
