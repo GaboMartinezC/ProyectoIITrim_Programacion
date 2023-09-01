@@ -1,5 +1,6 @@
 ﻿using DAL;
 using ET.DTO;
+using ET;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +13,26 @@ namespace BL
     public class FactorFormaBL
     {
         private FactorFormaDAL dal = new();
+        public bool IngresarFactorForma(FactorForma factorForma) 
+        {
+            string descripcion = string.Empty;
+            DataTable listFactorForma = dal.BuscarFactorForma();
+            for (int i = 0; i < listFactorForma.Rows.Count; i++)
+            {
+                descripcion = listFactorForma.Rows[i]["DESCRIPCION_FACTOR_FORMA"].ToString();
+                if (descripcion.Equals(factorForma.Descripcion))
+                    return false;
+            }
+            return dal.IngresarFactorForma(factorForma);
+        }
+        public bool ActualizarFactorForma(FactorForma factorForma)
+        {
+            return dal.ActualizarFactorForma(factorForma);
+        }
+        public bool EliminarFactorForma(int id)
+        {
+            return dal.EliminarFactorForma(id);
+        }
         public List<FactorForma_DTO> BuscarFactorForma()
         {
             List<FactorForma_DTO> retVal = new();

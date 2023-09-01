@@ -15,7 +15,7 @@ namespace BL
             DataTable listaRAM = dal.BuscarRAM();
             for (int i = 0; i < listaRAM.Rows.Count; i++)
             {
-                descripcion = listaRAM.Rows[i]["DESCRIPCION"].ToString();
+                descripcion = listaRAM.Rows[i]["DESCRIPCION_RAM"].ToString();
                 if (descripcion.Equals(ram.Descripcion))
                     return false;
             }

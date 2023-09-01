@@ -1,5 +1,6 @@
 ﻿using DAL;
 using ET.DTO;
+using ET;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +12,27 @@ namespace BL
 {
     public class CPU_BL
     {
-        private CPU_DAL dal = new(); 
+        private CPU_DAL dal = new();
+        public bool IngresarCPU(CPU cpu)
+        {
+            string descripcion = string.Empty;
+            DataTable listCpu = dal.BuscarCPU();
+            for (int i = 0; i < listCpu.Rows.Count; i++)
+            {
+                descripcion = listCpu.Rows[i]["DESCRIPCION_CPU"].ToString();
+                if (descripcion.Equals(cpu.Descripcion))
+                    return false;
+            }
+            return dal.IngresarCPU(cpu);
+        }
+        public bool ActualizarCPU(CPU cpu)
+        {
+            return dal.ActualizarCPU(cpu);
+        }
+        public bool EliminarCPU(int id)
+        {
+            return dal.EliminarCPU(id);
+        }
         public List<CPU_DTO> BuscarCPU()
         {
             List<CPU_DTO> retVal = new();

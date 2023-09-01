@@ -1,4 +1,5 @@
 ﻿using DAL;
+using ET;
 using ET.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,26 @@ namespace BL
     public class PlacaMadreBL
     {
         private PlacaMadreDAL dal = new();
+        public bool IngresarPlacaMadre(PlacaMadre placa)
+        {
+            string descripcion = string.Empty;
+            DataTable listFactorForma = dal.BuscarPlacaMadre();
+            for (int i = 0; i < listFactorForma.Rows.Count; i++)
+            {
+                descripcion = listFactorForma.Rows[i]["DESCRIPCION_PLACA"].ToString();
+                if (descripcion.Equals(placa.Descripcion))
+                    return false;
+            }
+            return dal.IngresarPlacaMadre(placa);
+        }
+        public bool ActualizarPlacaMadre(PlacaMadre placa)
+        {
+            return dal.ActualizarPlacaMadre(placa);
+        }
+        public bool EliminarPlacaMadre(int id)
+        {
+            return dal.EliminarPlacaMadre(id);
+        }
         public List<PlacaMadre_DTO> BuscarPlacaMadre()
         {
             List<PlacaMadre_DTO> retVal = new();

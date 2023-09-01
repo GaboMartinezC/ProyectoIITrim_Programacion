@@ -1,5 +1,6 @@
 ﻿using DAL;
 using ET.DTO;
+using ET;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +13,26 @@ namespace BL
     public class CaseBL
     {
         private CaseDAL dal = new();
+        public bool IngresarCase(Case caseCPU)
+        {
+            string descripcion = string.Empty;
+            DataTable listCase = dal.BuscarCase();
+            for (int i = 0; i < listCase.Rows.Count; i++)
+            {
+                descripcion = listCase.Rows[i]["DESCRIPCION_CASE"].ToString();
+                if (descripcion.Equals(caseCPU.Descripcion))
+                    return false;
+            }
+            return dal.IngresarCase(caseCPU); 
+        }
+        public bool ActualizarCase(Case caseCPU)
+        {
+            return dal.ActualizarCase(caseCPU);
+        }
+        public bool EliminarCase(int id)
+        {
+            return dal.EliminarCase(id);
+        }
         public List<Case_DTO> BuscarCase()
         {
             List<Case_DTO> retVal = new();
