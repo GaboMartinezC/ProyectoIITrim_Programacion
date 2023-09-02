@@ -20,7 +20,7 @@ namespace DAL
                 try
                 {
                     cn.Open();
-                    using (var cmd = new SqlCommand("SpIngresarAlmacenamiento", cn))
+                    using (var cmd = new SqlCommand("SpIngresarGPU", cn))
                     {
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -49,7 +49,7 @@ namespace DAL
                 try
                 {
                     cn.Open();
-                    using (var cmd = new SqlCommand("SpActualizarAlmacenamiento", cn))
+                    using (var cmd = new SqlCommand("SpActualizarGPU", cn))
                     {
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
