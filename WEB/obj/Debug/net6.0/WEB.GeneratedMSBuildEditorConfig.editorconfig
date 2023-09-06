@@ -28,6 +28,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxtYWNlbmFtaWVudG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Case/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Cpu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3B1XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Enfriamiento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5mcmlhbWllbnRvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/FactorForma/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdG9yRm9ybWFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/FuentePoder/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVlbnRlUG9kZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVlbnRlUG9kZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Gpu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3B1XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/Home/Listado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0YWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/PlacaMadre/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhY2FNYWRyZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/marti/source/repos/ProyectoIITrim_Programacion/WEB/Views/RAM/Create.cshtml]
