@@ -1,5 +1,113 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<ET.DTO.Enfriamiento_DTO>
 @{
+    ViewData["Title"] = "Sistema de Enfriamiento";
 }
+@section Scripts
+    {
+    <script type="text/javascript">
+        let idGlobal;
+        const CerrarModales = () => {
+            document.getElementById("modalConfirmarBorrado").style.display = "none";
+        }
+        const Guardar = () => {
+            window.location.replace("/Enfriamiento/Create");
+        }
+        const Modificar = (id) => {
+            window.location.replace("/Enfriamiento/Edit/" + id);
+        }
+        const Eliminar = (id, confirmado) => {
+            if (id != 0)
+                idGlobal = id;
+            if (!confirmado)
+                document.getElementById("modalConfirmarBorrado").style.display = "block";
+            else {
+                id = idGlobal;
+                $.ajax({
+                    url: "/Enfriamiento/Delete",
+                    type: "POST",
+                    data: { id: id },
+                    success: function (respuesta) {
+                        swal("Exito!", "Eliminado correctamente", "success");
+                    },
+                    error: function () {
+                        swal("Ha ocurrido un problema", "Error al eliminar", "success");
+                    }
+                });
+            }
+        }
+    </script>
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 col-sm-12 p-3">
+            <h1 class="title text-center">Gestión de las Fuentes de Poder del catálogo</h1>
+        </div>
+        <div class="col-md-4 col-sm-12"></div>
+        <div class="col-md-8 offset-md-2 p-2 text-center">
+            <div class="table-responsive" style="max-height: 250px; overflow: scroll;">
+                <table class="table table-hover table-sm" id="tablaFija" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="th-sm">ID</th>
+                            <th scope="col" class="th-sm">Descripción</th>
+                            <th scope="col" class="th-sm">Socket</th>
+                            <th scope="col" class="th-sm">Ref. Liquida</th>
+                            <th scope="col" class="th-sm"></th>
+                            <th scope="col" class="th-sm"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var enf in Model)
+                        {
+                            <tr>
+                                <td>@enf.id</td>
+                                <td>@enf.descripcion</td>
+                                <td>@enf.descripcionSocket</td>
+                                <td>@enf.liquido</td>
+                                <td>
+                                    <button class="btn btn-warning" onclick="Modificar(@enf.id);"></button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger" onclick="Eliminar(@enf.id, false);"></button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-12"></div>
+        <div class="col-md-4 offset-md-4 p-2 col-sm-12 text-center">
+            <button class="btn btn-outline-dark" onclick="Guardar();">
+                <span>Añadir &plus;</span>
+            </button>
+        </div>
+        <div class="col-md-8 p-2 col-sm-12 text-center"></div>
+        <div class="col-md-2 col-sm-12"></div>
+    </div>
+</div>
+<!--Modal de Borrado-->
+<div id="modalConfirmarBorrado" class="miModal">
+    <div class="contenidoModal">
+        <button class="btn" onclick="CerrarModales();">
+            <span style="color: black;">&times;</span>
+        </button>
+        <!--Contenido del modal-->
+        <div class="row">
+            <div class="col-md-4 offset-md-4 col-sm-12">
+                <p>¿Seguro de eliminar este elemento del Catálogo?</p>
+            </div>
+            <div class="col-md-8"></div>
+            <div class="col-md-4 offset-md-2 col-sm-12 p-2 text-center">
+                <button class="btn btn-outline-danger" onclick="Eliminar(0,true);">
+                    <span>Sí</span>
+                </button>
+            </div>
+            <div class="col-md-4 col-sm-12 p-2 text-center">
+                <button class="btn btn-outline-primary" onclick="CerrarModales();">
+                    <span>No</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

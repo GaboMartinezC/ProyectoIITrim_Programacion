@@ -10,7 +10,7 @@ namespace WEB.Controllers
         private FactorFormaBL bl = new FactorFormaBL();
         public IActionResult Index()
         {
-            return View();
+            return View(bl.BuscarFactorForma());
         }
         public IActionResult Create()
         {

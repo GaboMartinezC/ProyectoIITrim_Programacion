@@ -11,7 +11,7 @@ namespace WEB.Controllers
         public IActionResult Index()
         {
             var lista = bl.BuscarGPU();
-            return View();
+            return View(lista);
         }
         public IActionResult Create () 
         {

@@ -1,0 +1,29 @@
+﻿@model ET.CPU
+<div class="row">
+    <div class="col-md-4 offset-md-4 col-sm-12 text-center">
+        <h1 class="subtitle">Guardar</h1>
+    </div>
+    <div class="col-md-8"></div>
+    <div class="col-md-8 offset-md-2 col-sm-12">
+        <form method="post" asp-action="Create" aspasp-controller="Cpu" class="form-control">
+            <!--Organizacion de los inputs con columnas nested-->
+            <div class="row">
+                <div class="col-md-12 p-3">
+                    <input asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion">
+                </div>
+                <div class="col-md-12 p-3">
+                    <input asp-for="ConsumoEnergetico" class="form-control" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event);">
+                </div>
+                <div class="col-md-4 col-sm-12 p-2">
+                    
+                </div>
+                <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <span>Guardar &plus;</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>

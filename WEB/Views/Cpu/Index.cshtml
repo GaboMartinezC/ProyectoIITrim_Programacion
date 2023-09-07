@@ -64,6 +64,12 @@
                                 <td>@cpu.descripcion</td>
                                 <td>@cpu.descripcionSocket</td>
                                 <td>@cpu.consumoEnergetico</td>
+                                <td>
+                                    <button class="btn btn-warning" onclick="Modificar(@cpu.id);"></button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger" onclick="Eliminar(@cpu.id, false);"></button>
+                                </td>
                             </tr>
                         }
                     </tbody>

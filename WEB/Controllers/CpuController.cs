@@ -16,9 +16,12 @@ namespace WEB.Controllers
         }
         public IActionResult Create ()
         {
-            return View();
+            CPU_DTO dto = new();
+            dto.listaSocket = new SocketBL().BuscarSocket();
+            return View(dto);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create (CPU cpu)
         {
             try
@@ -40,6 +43,7 @@ namespace WEB.Controllers
             return View(dto);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(CPU_DTO dto)
         {
             try
@@ -65,6 +69,7 @@ namespace WEB.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
             try

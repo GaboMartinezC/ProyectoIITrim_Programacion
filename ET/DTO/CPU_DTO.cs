@@ -13,5 +13,6 @@ namespace ET.DTO
         public int idSocket { get; set; }
         public string descripcionSocket { get; set; }
         public double consumoEnergetico { get; set; }
+        public List<Socket_DTO> listaSocket = new();
     }
 }
